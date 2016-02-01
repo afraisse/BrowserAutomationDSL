@@ -2,7 +2,6 @@
  */
 package org.xtext.emn.selenium.sel;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,12 +30,12 @@ public interface Check extends Instruction
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Checkbox</em>' containment reference.
-   * @see #setCheckbox(EObject)
+   * @see #setCheckbox(Elem)
    * @see org.xtext.emn.selenium.sel.SelPackage#getCheck_Checkbox()
    * @model containment="true"
    * @generated
    */
-  EObject getCheckbox();
+  Elem getCheckbox();
 
   /**
    * Sets the value of the '{@link org.xtext.emn.selenium.sel.Check#getCheckbox <em>Checkbox</em>}' containment reference.
@@ -46,6 +45,6 @@ public interface Check extends Instruction
    * @see #getCheckbox()
    * @generated
    */
-  void setCheckbox(EObject value);
+  void setCheckbox(Elem value);
 
 } // Check

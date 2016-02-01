@@ -6,11 +6,11 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.xtext.emn.selenium.sel.Elem;
 import org.xtext.emn.selenium.sel.GoTo;
 import org.xtext.emn.selenium.sel.SelPackage;
 
@@ -58,7 +58,7 @@ public class GoToImpl extends InstructionImpl implements GoTo
    * @generated
    * @ordered
    */
-  protected EObject link;
+  protected Elem link;
 
   /**
    * <!-- begin-user-doc -->
@@ -109,7 +109,7 @@ public class GoToImpl extends InstructionImpl implements GoTo
    * <!-- end-user-doc -->
    * @generated
    */
-  public EObject getLink()
+  public Elem getLink()
   {
     return link;
   }
@@ -119,9 +119,9 @@ public class GoToImpl extends InstructionImpl implements GoTo
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetLink(EObject newLink, NotificationChain msgs)
+  public NotificationChain basicSetLink(Elem newLink, NotificationChain msgs)
   {
-    EObject oldLink = link;
+    Elem oldLink = link;
     link = newLink;
     if (eNotificationRequired())
     {
@@ -136,7 +136,7 @@ public class GoToImpl extends InstructionImpl implements GoTo
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLink(EObject newLink)
+  public void setLink(Elem newLink)
   {
     if (newLink != link)
     {
@@ -200,7 +200,7 @@ public class GoToImpl extends InstructionImpl implements GoTo
         setValue((String)newValue);
         return;
       case SelPackage.GO_TO__LINK:
-        setLink((EObject)newValue);
+        setLink((Elem)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -220,7 +220,7 @@ public class GoToImpl extends InstructionImpl implements GoTo
         setValue(VALUE_EDEFAULT);
         return;
       case SelPackage.GO_TO__LINK:
-        setLink((EObject)null);
+        setLink((Elem)null);
         return;
     }
     super.eUnset(featureID);

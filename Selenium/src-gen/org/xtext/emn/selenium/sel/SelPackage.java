@@ -197,6 +197,25 @@ public interface SelPackage extends EPackage
   int SEQUENCE_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 3;
 
   /**
+   * The meta object id for the '{@link org.xtext.emn.selenium.sel.impl.ElemImpl <em>Elem</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.emn.selenium.sel.impl.ElemImpl
+   * @see org.xtext.emn.selenium.sel.impl.SelPackageImpl#getElem()
+   * @generated
+   */
+  int ELEM = 18;
+
+  /**
+   * The number of structural features of the '<em>Elem</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEM_FEATURE_COUNT = 0;
+
+  /**
    * The meta object id for the '{@link org.xtext.emn.selenium.sel.impl.VariableImpl <em>Variable</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -213,7 +232,7 @@ public interface SelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIABLE__NAME = 0;
+  int VARIABLE__NAME = ELEM_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Variable</em>' class.
@@ -222,7 +241,7 @@ public interface SelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIABLE_FEATURE_COUNT = 1;
+  int VARIABLE_FEATURE_COUNT = ELEM_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.xtext.emn.selenium.sel.impl.ForAllImpl <em>For All</em>}' class.
@@ -512,7 +531,7 @@ public interface SelPackage extends EPackage
   int CLICK = 12;
 
   /**
-   * The feature id for the '<em><b>Elem</b></em>' containment reference.
+   * The feature id for the '<em><b>Elem</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -633,7 +652,7 @@ public interface SelPackage extends EPackage
   int UNARY_CONDITION__OP = CONDITION_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Elem</b></em>' containment reference.
+   * The feature id for the '<em><b>Elem</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -706,43 +725,6 @@ public interface SelPackage extends EPackage
   int BINARY_CONDITION_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 4;
 
   /**
-   * The meta object id for the '{@link org.xtext.emn.selenium.sel.impl.ElemImpl <em>Elem</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.emn.selenium.sel.impl.ElemImpl
-   * @see org.xtext.emn.selenium.sel.impl.SelPackageImpl#getElem()
-   * @generated
-   */
-  int ELEM = 18;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELEM__VALUE = 0;
-
-  /**
-   * The feature id for the '<em><b>Var</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELEM__VAR = 1;
-
-  /**
-   * The number of structural features of the '<em>Elem</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELEM_FEATURE_COUNT = 2;
-
-  /**
    * The meta object id for the '{@link org.xtext.emn.selenium.sel.impl.GetButtonImpl <em>Get Button</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -759,7 +741,7 @@ public interface SelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GET_BUTTON__VALUE = ELEM__VALUE;
+  int GET_BUTTON__VALUE = ELEM_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Var</b></em>' reference.
@@ -768,7 +750,7 @@ public interface SelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GET_BUTTON__VAR = ELEM__VAR;
+  int GET_BUTTON__VAR = ELEM_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Get Button</em>' class.
@@ -777,7 +759,7 @@ public interface SelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GET_BUTTON_FEATURE_COUNT = ELEM_FEATURE_COUNT + 0;
+  int GET_BUTTON_FEATURE_COUNT = ELEM_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.xtext.emn.selenium.sel.impl.GetLinkImpl <em>Get Link</em>}' class.
@@ -796,7 +778,7 @@ public interface SelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GET_LINK__VALUE = ELEM__VALUE;
+  int GET_LINK__VALUE = ELEM_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Var</b></em>' reference.
@@ -805,7 +787,7 @@ public interface SelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GET_LINK__VAR = ELEM__VAR;
+  int GET_LINK__VAR = ELEM_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Get Link</em>' class.
@@ -814,7 +796,7 @@ public interface SelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GET_LINK_FEATURE_COUNT = ELEM_FEATURE_COUNT + 0;
+  int GET_LINK_FEATURE_COUNT = ELEM_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.xtext.emn.selenium.sel.impl.GetCheckboxImpl <em>Get Checkbox</em>}' class.
@@ -833,7 +815,7 @@ public interface SelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GET_CHECKBOX__VALUE = ELEM__VALUE;
+  int GET_CHECKBOX__VALUE = ELEM_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Var</b></em>' reference.
@@ -842,7 +824,7 @@ public interface SelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GET_CHECKBOX__VAR = ELEM__VAR;
+  int GET_CHECKBOX__VAR = ELEM_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Get Checkbox</em>' class.
@@ -851,7 +833,7 @@ public interface SelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GET_CHECKBOX_FEATURE_COUNT = ELEM_FEATURE_COUNT + 0;
+  int GET_CHECKBOX_FEATURE_COUNT = ELEM_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.xtext.emn.selenium.sel.impl.GetTextImpl <em>Get Text</em>}' class.
@@ -870,7 +852,7 @@ public interface SelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GET_TEXT__VALUE = ELEM__VALUE;
+  int GET_TEXT__VALUE = ELEM_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Var</b></em>' reference.
@@ -879,7 +861,7 @@ public interface SelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GET_TEXT__VAR = ELEM__VAR;
+  int GET_TEXT__VAR = ELEM_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Get Text</em>' class.
@@ -888,7 +870,7 @@ public interface SelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GET_TEXT_FEATURE_COUNT = ELEM_FEATURE_COUNT + 0;
+  int GET_TEXT_FEATURE_COUNT = ELEM_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.xtext.emn.selenium.sel.impl.ElemsImpl <em>Elems</em>}' class.
@@ -1454,10 +1436,10 @@ public interface SelPackage extends EPackage
   EClass getClick();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.emn.selenium.sel.Click#getElem <em>Elem</em>}'.
+   * Returns the meta object for the reference '{@link org.xtext.emn.selenium.sel.Click#getElem <em>Elem</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Elem</em>'.
+   * @return the meta object for the reference '<em>Elem</em>'.
    * @see org.xtext.emn.selenium.sel.Click#getElem()
    * @see #getClick()
    * @generated
@@ -1549,10 +1531,10 @@ public interface SelPackage extends EPackage
   EAttribute getUnaryCondition_Op();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.emn.selenium.sel.UnaryCondition#getElem <em>Elem</em>}'.
+   * Returns the meta object for the reference '{@link org.xtext.emn.selenium.sel.UnaryCondition#getElem <em>Elem</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Elem</em>'.
+   * @return the meta object for the reference '<em>Elem</em>'.
    * @see org.xtext.emn.selenium.sel.UnaryCondition#getElem()
    * @see #getUnaryCondition()
    * @generated
@@ -1624,28 +1606,6 @@ public interface SelPackage extends EPackage
   EClass getElem();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.emn.selenium.sel.Elem#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see org.xtext.emn.selenium.sel.Elem#getValue()
-   * @see #getElem()
-   * @generated
-   */
-  EAttribute getElem_Value();
-
-  /**
-   * Returns the meta object for the reference '{@link org.xtext.emn.selenium.sel.Elem#getVar <em>Var</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Var</em>'.
-   * @see org.xtext.emn.selenium.sel.Elem#getVar()
-   * @see #getElem()
-   * @generated
-   */
-  EReference getElem_Var();
-
-  /**
    * Returns the meta object for class '{@link org.xtext.emn.selenium.sel.GetButton <em>Get Button</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1654,6 +1614,28 @@ public interface SelPackage extends EPackage
    * @generated
    */
   EClass getGetButton();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.emn.selenium.sel.GetButton#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.xtext.emn.selenium.sel.GetButton#getValue()
+   * @see #getGetButton()
+   * @generated
+   */
+  EAttribute getGetButton_Value();
+
+  /**
+   * Returns the meta object for the reference '{@link org.xtext.emn.selenium.sel.GetButton#getVar <em>Var</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Var</em>'.
+   * @see org.xtext.emn.selenium.sel.GetButton#getVar()
+   * @see #getGetButton()
+   * @generated
+   */
+  EReference getGetButton_Var();
 
   /**
    * Returns the meta object for class '{@link org.xtext.emn.selenium.sel.GetLink <em>Get Link</em>}'.
@@ -1666,6 +1648,28 @@ public interface SelPackage extends EPackage
   EClass getGetLink();
 
   /**
+   * Returns the meta object for the attribute '{@link org.xtext.emn.selenium.sel.GetLink#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.xtext.emn.selenium.sel.GetLink#getValue()
+   * @see #getGetLink()
+   * @generated
+   */
+  EAttribute getGetLink_Value();
+
+  /**
+   * Returns the meta object for the reference '{@link org.xtext.emn.selenium.sel.GetLink#getVar <em>Var</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Var</em>'.
+   * @see org.xtext.emn.selenium.sel.GetLink#getVar()
+   * @see #getGetLink()
+   * @generated
+   */
+  EReference getGetLink_Var();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.emn.selenium.sel.GetCheckbox <em>Get Checkbox</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1676,6 +1680,28 @@ public interface SelPackage extends EPackage
   EClass getGetCheckbox();
 
   /**
+   * Returns the meta object for the attribute '{@link org.xtext.emn.selenium.sel.GetCheckbox#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.xtext.emn.selenium.sel.GetCheckbox#getValue()
+   * @see #getGetCheckbox()
+   * @generated
+   */
+  EAttribute getGetCheckbox_Value();
+
+  /**
+   * Returns the meta object for the reference '{@link org.xtext.emn.selenium.sel.GetCheckbox#getVar <em>Var</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Var</em>'.
+   * @see org.xtext.emn.selenium.sel.GetCheckbox#getVar()
+   * @see #getGetCheckbox()
+   * @generated
+   */
+  EReference getGetCheckbox_Var();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.emn.selenium.sel.GetText <em>Get Text</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1684,6 +1710,28 @@ public interface SelPackage extends EPackage
    * @generated
    */
   EClass getGetText();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.emn.selenium.sel.GetText#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.xtext.emn.selenium.sel.GetText#getValue()
+   * @see #getGetText()
+   * @generated
+   */
+  EAttribute getGetText_Value();
+
+  /**
+   * Returns the meta object for the reference '{@link org.xtext.emn.selenium.sel.GetText#getVar <em>Var</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Var</em>'.
+   * @see org.xtext.emn.selenium.sel.GetText#getVar()
+   * @see #getGetText()
+   * @generated
+   */
+  EReference getGetText_Var();
 
   /**
    * Returns the meta object for class '{@link org.xtext.emn.selenium.sel.Elems <em>Elems</em>}'.
@@ -2113,7 +2161,7 @@ public interface SelPackage extends EPackage
     EClass CLICK = eINSTANCE.getClick();
 
     /**
-     * The meta object literal for the '<em><b>Elem</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Elem</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -2193,7 +2241,7 @@ public interface SelPackage extends EPackage
     EAttribute UNARY_CONDITION__OP = eINSTANCE.getUnaryCondition_Op();
 
     /**
-     * The meta object literal for the '<em><b>Elem</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Elem</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -2253,22 +2301,6 @@ public interface SelPackage extends EPackage
     EClass ELEM = eINSTANCE.getElem();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ELEM__VALUE = eINSTANCE.getElem_Value();
-
-    /**
-     * The meta object literal for the '<em><b>Var</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ELEM__VAR = eINSTANCE.getElem_Var();
-
-    /**
      * The meta object literal for the '{@link org.xtext.emn.selenium.sel.impl.GetButtonImpl <em>Get Button</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2277,6 +2309,22 @@ public interface SelPackage extends EPackage
      * @generated
      */
     EClass GET_BUTTON = eINSTANCE.getGetButton();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GET_BUTTON__VALUE = eINSTANCE.getGetButton_Value();
+
+    /**
+     * The meta object literal for the '<em><b>Var</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GET_BUTTON__VAR = eINSTANCE.getGetButton_Var();
 
     /**
      * The meta object literal for the '{@link org.xtext.emn.selenium.sel.impl.GetLinkImpl <em>Get Link</em>}' class.
@@ -2289,6 +2337,22 @@ public interface SelPackage extends EPackage
     EClass GET_LINK = eINSTANCE.getGetLink();
 
     /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GET_LINK__VALUE = eINSTANCE.getGetLink_Value();
+
+    /**
+     * The meta object literal for the '<em><b>Var</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GET_LINK__VAR = eINSTANCE.getGetLink_Var();
+
+    /**
      * The meta object literal for the '{@link org.xtext.emn.selenium.sel.impl.GetCheckboxImpl <em>Get Checkbox</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2299,6 +2363,22 @@ public interface SelPackage extends EPackage
     EClass GET_CHECKBOX = eINSTANCE.getGetCheckbox();
 
     /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GET_CHECKBOX__VALUE = eINSTANCE.getGetCheckbox_Value();
+
+    /**
+     * The meta object literal for the '<em><b>Var</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GET_CHECKBOX__VAR = eINSTANCE.getGetCheckbox_Var();
+
+    /**
      * The meta object literal for the '{@link org.xtext.emn.selenium.sel.impl.GetTextImpl <em>Get Text</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2307,6 +2387,22 @@ public interface SelPackage extends EPackage
      * @generated
      */
     EClass GET_TEXT = eINSTANCE.getGetText();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GET_TEXT__VALUE = eINSTANCE.getGetText_Value();
+
+    /**
+     * The meta object literal for the '<em><b>Var</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GET_TEXT__VAR = eINSTANCE.getGetText_Var();
 
     /**
      * The meta object literal for the '{@link org.xtext.emn.selenium.sel.impl.ElemsImpl <em>Elems</em>}' class.

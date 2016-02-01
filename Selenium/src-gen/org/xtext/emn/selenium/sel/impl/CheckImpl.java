@@ -6,12 +6,12 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.xtext.emn.selenium.sel.Check;
+import org.xtext.emn.selenium.sel.Elem;
 import org.xtext.emn.selenium.sel.SelPackage;
 
 /**
@@ -37,7 +37,7 @@ public class CheckImpl extends InstructionImpl implements Check
    * @generated
    * @ordered
    */
-  protected EObject checkbox;
+  protected Elem checkbox;
 
   /**
    * <!-- begin-user-doc -->
@@ -65,7 +65,7 @@ public class CheckImpl extends InstructionImpl implements Check
    * <!-- end-user-doc -->
    * @generated
    */
-  public EObject getCheckbox()
+  public Elem getCheckbox()
   {
     return checkbox;
   }
@@ -75,9 +75,9 @@ public class CheckImpl extends InstructionImpl implements Check
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetCheckbox(EObject newCheckbox, NotificationChain msgs)
+  public NotificationChain basicSetCheckbox(Elem newCheckbox, NotificationChain msgs)
   {
-    EObject oldCheckbox = checkbox;
+    Elem oldCheckbox = checkbox;
     checkbox = newCheckbox;
     if (eNotificationRequired())
     {
@@ -92,7 +92,7 @@ public class CheckImpl extends InstructionImpl implements Check
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setCheckbox(EObject newCheckbox)
+  public void setCheckbox(Elem newCheckbox)
   {
     if (newCheckbox != checkbox)
     {
@@ -151,7 +151,7 @@ public class CheckImpl extends InstructionImpl implements Check
     switch (featureID)
     {
       case SelPackage.CHECK__CHECKBOX:
-        setCheckbox((EObject)newValue);
+        setCheckbox((Elem)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -168,7 +168,7 @@ public class CheckImpl extends InstructionImpl implements Check
     switch (featureID)
     {
       case SelPackage.CHECK__CHECKBOX:
-        setCheckbox((EObject)null);
+        setCheckbox((Elem)null);
         return;
     }
     super.eUnset(featureID);

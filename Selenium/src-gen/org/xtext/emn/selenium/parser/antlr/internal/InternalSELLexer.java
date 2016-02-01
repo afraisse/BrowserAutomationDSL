@@ -759,10 +759,10 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1943:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1943:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1917:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1917:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1943:11: ( '^' )?
+            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1917:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -771,7 +771,7 @@ public class InternalSELLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1943:11: '^'
+                    // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1917:11: '^'
                     {
                     match('^'); 
 
@@ -789,7 +789,7 @@ public class InternalSELLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1943:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1917:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -838,10 +838,10 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1945:10: ( ( '0' .. '9' )+ )
-            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1945:12: ( '0' .. '9' )+
+            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1919:10: ( ( '0' .. '9' )+ )
+            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1919:12: ( '0' .. '9' )+
             {
-            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1945:12: ( '0' .. '9' )+
+            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1919:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -855,7 +855,7 @@ public class InternalSELLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1945:13: '0' .. '9'
+            	    // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1919:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -887,10 +887,10 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1947:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1947:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1921:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1921:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1947:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1921:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -908,10 +908,10 @@ public class InternalSELLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1947:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1921:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1947:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1921:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -927,7 +927,7 @@ public class InternalSELLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1947:21: '\\\\' .
+                    	    // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1921:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -935,7 +935,7 @@ public class InternalSELLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1947:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1921:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -960,10 +960,10 @@ public class InternalSELLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1947:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1921:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1947:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1921:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -979,7 +979,7 @@ public class InternalSELLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1947:54: '\\\\' .
+                    	    // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1921:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -987,7 +987,7 @@ public class InternalSELLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1947:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1921:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1030,12 +1030,12 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1949:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1949:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1923:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1923:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1949:24: ( options {greedy=false; } : . )*
+            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1923:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -1060,7 +1060,7 @@ public class InternalSELLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1949:52: .
+            	    // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1923:52: .
             	    {
             	    matchAny(); 
 
@@ -1090,12 +1090,12 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1951:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1951:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1925:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1925:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1951:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1925:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -1108,7 +1108,7 @@ public class InternalSELLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1951:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1925:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1128,7 +1128,7 @@ public class InternalSELLexer extends Lexer {
                 }
             } while (true);
 
-            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1951:40: ( ( '\\r' )? '\\n' )?
+            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1925:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1137,9 +1137,9 @@ public class InternalSELLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1951:41: ( '\\r' )? '\\n'
+                    // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1925:41: ( '\\r' )? '\\n'
                     {
-                    // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1951:41: ( '\\r' )?
+                    // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1925:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -1148,7 +1148,7 @@ public class InternalSELLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1951:41: '\\r'
+                            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1925:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1180,10 +1180,10 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1953:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1953:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1927:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1927:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1953:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1927:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -1237,8 +1237,8 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1955:16: ( . )
-            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1955:18: .
+            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1929:16: ( . )
+            // ../Selenium/src-gen/org/xtext/emn/selenium/parser/antlr/internal/InternalSEL.g:1929:18: .
             {
             matchAny(); 
 

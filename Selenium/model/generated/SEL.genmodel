@@ -64,7 +64,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SEL.ecore#//Check/checkbox"/>
     </genClasses>
     <genClasses ecoreClass="SEL.ecore#//Click">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SEL.ecore#//Click/elem"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SEL.ecore#//Click/elem"/>
     </genClasses>
     <genClasses ecoreClass="SEL.ecore#//Verify">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SEL.ecore#//Verify/condition"/>
@@ -76,7 +76,7 @@
     <genClasses ecoreClass="SEL.ecore#//Condition"/>
     <genClasses ecoreClass="SEL.ecore#//UnaryCondition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SEL.ecore#//UnaryCondition/op"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SEL.ecore#//UnaryCondition/elem"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SEL.ecore#//UnaryCondition/elem"/>
     </genClasses>
     <genClasses ecoreClass="SEL.ecore#//BinaryCondition">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SEL.ecore#//BinaryCondition/elem"/>
@@ -84,14 +84,23 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SEL.ecore#//BinaryCondition/value"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SEL.ecore#//BinaryCondition/param"/>
     </genClasses>
-    <genClasses ecoreClass="SEL.ecore#//Elem">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SEL.ecore#//Elem/value"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SEL.ecore#//Elem/var"/>
+    <genClasses ecoreClass="SEL.ecore#//Elem"/>
+    <genClasses ecoreClass="SEL.ecore#//GetButton">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SEL.ecore#//GetButton/value"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SEL.ecore#//GetButton/var"/>
     </genClasses>
-    <genClasses ecoreClass="SEL.ecore#//GetButton"/>
-    <genClasses ecoreClass="SEL.ecore#//GetLink"/>
-    <genClasses ecoreClass="SEL.ecore#//GetCheckbox"/>
-    <genClasses ecoreClass="SEL.ecore#//GetText"/>
+    <genClasses ecoreClass="SEL.ecore#//GetLink">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SEL.ecore#//GetLink/value"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SEL.ecore#//GetLink/var"/>
+    </genClasses>
+    <genClasses ecoreClass="SEL.ecore#//GetCheckbox">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SEL.ecore#//GetCheckbox/value"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SEL.ecore#//GetCheckbox/var"/>
+    </genClasses>
+    <genClasses ecoreClass="SEL.ecore#//GetText">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SEL.ecore#//GetText/value"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SEL.ecore#//GetText/var"/>
+    </genClasses>
     <genClasses ecoreClass="SEL.ecore#//Elems">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SEL.ecore#//Elems/value"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SEL.ecore#//Elems/var"/>

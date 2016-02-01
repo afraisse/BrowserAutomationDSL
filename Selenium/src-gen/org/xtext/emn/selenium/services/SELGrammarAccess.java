@@ -582,35 +582,27 @@ public class SELGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cClickKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cElemAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final Alternatives cElemAlternatives_1_0 = (Alternatives)cElemAssignment_1.eContents().get(0);
-		private final RuleCall cElemElemParserRuleCall_1_0_0 = (RuleCall)cElemAlternatives_1_0.eContents().get(0);
-		private final CrossReference cElemVariableCrossReference_1_0_1 = (CrossReference)cElemAlternatives_1_0.eContents().get(1);
-		private final RuleCall cElemVariableIDTerminalRuleCall_1_0_1_1 = (RuleCall)cElemVariableCrossReference_1_0_1.eContents().get(1);
+		private final CrossReference cElemElemCrossReference_1_0 = (CrossReference)cElemAssignment_1.eContents().get(0);
+		private final RuleCall cElemElemIDTerminalRuleCall_1_0_1 = (RuleCall)cElemElemCrossReference_1_0.eContents().get(1);
 		
 		//Click:
-		//	"Click" elem=(Elem | [Variable]);
+		//	"Click" elem=[Elem];
 		@Override public ParserRule getRule() { return rule; }
 
-		//"Click" elem=(Elem | [Variable])
+		//"Click" elem=[Elem]
 		public Group getGroup() { return cGroup; }
 
 		//"Click"
 		public Keyword getClickKeyword_0() { return cClickKeyword_0; }
 
-		//elem=(Elem | [Variable])
+		//elem=[Elem]
 		public Assignment getElemAssignment_1() { return cElemAssignment_1; }
 
-		//(Elem | [Variable])
-		public Alternatives getElemAlternatives_1_0() { return cElemAlternatives_1_0; }
-
-		//Elem
-		public RuleCall getElemElemParserRuleCall_1_0_0() { return cElemElemParserRuleCall_1_0_0; }
-
-		//[Variable]
-		public CrossReference getElemVariableCrossReference_1_0_1() { return cElemVariableCrossReference_1_0_1; }
+		//[Elem]
+		public CrossReference getElemElemCrossReference_1_0() { return cElemElemCrossReference_1_0; }
 
 		//ID
-		public RuleCall getElemVariableIDTerminalRuleCall_1_0_1_1() { return cElemVariableIDTerminalRuleCall_1_0_1_1; }
+		public RuleCall getElemElemIDTerminalRuleCall_1_0_1() { return cElemElemIDTerminalRuleCall_1_0_1; }
 	}
 
 	public class VerifyElements extends AbstractParserRuleElementFinder {
@@ -720,16 +712,14 @@ public class SELGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cOpAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cOpUnaryOpEnumRuleCall_0_0 = (RuleCall)cOpAssignment_0.eContents().get(0);
 		private final Assignment cElemAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final Alternatives cElemAlternatives_1_0 = (Alternatives)cElemAssignment_1.eContents().get(0);
-		private final RuleCall cElemElemParserRuleCall_1_0_0 = (RuleCall)cElemAlternatives_1_0.eContents().get(0);
-		private final CrossReference cElemVariableCrossReference_1_0_1 = (CrossReference)cElemAlternatives_1_0.eContents().get(1);
-		private final RuleCall cElemVariableIDTerminalRuleCall_1_0_1_1 = (RuleCall)cElemVariableCrossReference_1_0_1.eContents().get(1);
+		private final CrossReference cElemElemCrossReference_1_0 = (CrossReference)cElemAssignment_1.eContents().get(0);
+		private final RuleCall cElemElemIDTerminalRuleCall_1_0_1 = (RuleCall)cElemElemCrossReference_1_0.eContents().get(1);
 		
 		//UnaryCondition:
-		//	op=UnaryOp elem=(Elem | [Variable]);
+		//	op=UnaryOp elem=[Elem];
 		@Override public ParserRule getRule() { return rule; }
 
-		//op=UnaryOp elem=(Elem | [Variable])
+		//op=UnaryOp elem=[Elem]
 		public Group getGroup() { return cGroup; }
 
 		//op=UnaryOp
@@ -738,20 +728,14 @@ public class SELGrammarAccess extends AbstractGrammarElementFinder {
 		//UnaryOp
 		public RuleCall getOpUnaryOpEnumRuleCall_0_0() { return cOpUnaryOpEnumRuleCall_0_0; }
 
-		//elem=(Elem | [Variable])
+		//elem=[Elem]
 		public Assignment getElemAssignment_1() { return cElemAssignment_1; }
 
-		//(Elem | [Variable])
-		public Alternatives getElemAlternatives_1_0() { return cElemAlternatives_1_0; }
-
-		//Elem
-		public RuleCall getElemElemParserRuleCall_1_0_0() { return cElemElemParserRuleCall_1_0_0; }
-
-		//[Variable]
-		public CrossReference getElemVariableCrossReference_1_0_1() { return cElemVariableCrossReference_1_0_1; }
+		//[Elem]
+		public CrossReference getElemElemCrossReference_1_0() { return cElemElemCrossReference_1_0; }
 
 		//ID
-		public RuleCall getElemVariableIDTerminalRuleCall_1_0_1_1() { return cElemVariableIDTerminalRuleCall_1_0_1_1; }
+		public RuleCall getElemElemIDTerminalRuleCall_1_0_1() { return cElemElemIDTerminalRuleCall_1_0_1; }
 	}
 
 	public class BinaryConditionElements extends AbstractParserRuleElementFinder {
@@ -813,15 +797,16 @@ public class SELGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cGetLinkParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cGetCheckboxParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cGetTextParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cVariableParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
 		//////////////////////////////////////////////////////////////////////////////
 		//// ELEMENTS ////////////////////////////////////////////////////////////////
 		//////////////////////////////////////////////////////////////////////////////
 		//Elem:
-		//	GetButton | GetLink | GetCheckbox | GetText;
+		//	GetButton | GetLink | GetCheckbox | GetText | Variable;
 		@Override public ParserRule getRule() { return rule; }
 
-		//GetButton | GetLink | GetCheckbox | GetText
+		//GetButton | GetLink | GetCheckbox | GetText | Variable
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//GetButton
@@ -835,6 +820,9 @@ public class SELGrammarAccess extends AbstractGrammarElementFinder {
 
 		//GetText
 		public RuleCall getGetTextParserRuleCall_3() { return cGetTextParserRuleCall_3; }
+
+		//Variable
+		public RuleCall getVariableParserRuleCall_4() { return cVariableParserRuleCall_4; }
 	}
 
 	public class GetButtonElements extends AbstractParserRuleElementFinder {
@@ -1435,7 +1423,7 @@ public class SELGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Click:
-	//	"Click" elem=(Elem | [Variable]);
+	//	"Click" elem=[Elem];
 	public ClickElements getClickAccess() {
 		return pClick;
 	}
@@ -1476,7 +1464,7 @@ public class SELGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//UnaryCondition:
-	//	op=UnaryOp elem=(Elem | [Variable]);
+	//	op=UnaryOp elem=[Elem];
 	public UnaryConditionElements getUnaryConditionAccess() {
 		return pUnaryCondition;
 	}
@@ -1519,7 +1507,7 @@ public class SELGrammarAccess extends AbstractGrammarElementFinder {
 	//// ELEMENTS ////////////////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////////////////////////////
 	//Elem:
-	//	GetButton | GetLink | GetCheckbox | GetText;
+	//	GetButton | GetLink | GetCheckbox | GetText | Variable;
 	public ElemElements getElemAccess() {
 		return pElem;
 	}

@@ -41,11 +41,9 @@ public class SELParser extends AbstractContentAssistParser {
 					put(grammarAccess.getInstructionAccess().getAlternatives(), "rule__Instruction__Alternatives");
 					put(grammarAccess.getFillAccess().getAlternatives_3(), "rule__Fill__Alternatives_3");
 					put(grammarAccess.getCheckAccess().getCheckboxAlternatives_1_0(), "rule__Check__CheckboxAlternatives_1_0");
-					put(grammarAccess.getClickAccess().getElemAlternatives_1_0(), "rule__Click__ElemAlternatives_1_0");
 					put(grammarAccess.getGoToAccess().getAlternatives_1(), "rule__GoTo__Alternatives_1");
 					put(grammarAccess.getGoToAccess().getLinkAlternatives_1_1_0(), "rule__GoTo__LinkAlternatives_1_1_0");
 					put(grammarAccess.getConditionAccess().getAlternatives_1(), "rule__Condition__Alternatives_1");
-					put(grammarAccess.getUnaryConditionAccess().getElemAlternatives_1_0(), "rule__UnaryCondition__ElemAlternatives_1_0");
 					put(grammarAccess.getBinaryConditionAccess().getAlternatives_2(), "rule__BinaryCondition__Alternatives_2");
 					put(grammarAccess.getElemAccess().getAlternatives(), "rule__Elem__Alternatives");
 					put(grammarAccess.getGetButtonAccess().getAlternatives_1(), "rule__GetButton__Alternatives_1");

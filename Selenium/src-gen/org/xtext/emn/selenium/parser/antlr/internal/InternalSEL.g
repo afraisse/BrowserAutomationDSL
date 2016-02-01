@@ -1030,33 +1030,15 @@ ruleClick returns [EObject current=null]
     }
 (
 (
-(
-		{ 
-	        newCompositeNode(grammarAccess.getClickAccess().getElemElemParserRuleCall_1_0_0()); 
-	    }
-		lv_elem_1_1=ruleElem		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getClickRule());
-	        }
-       		set(
-       			$current, 
-       			"elem",
-        		lv_elem_1_1, 
-        		"Elem");
-	        afterParserOrEnumRuleCall();
-	    }
-
-    |		{
+		{
 			if ($current==null) {
 	            $current = createModelElement(grammarAccess.getClickRule());
 	        }
         }
 	otherlv_1=RULE_ID
 	{
-		newLeafNode(otherlv_1, grammarAccess.getClickAccess().getElemVariableCrossReference_1_0_1()); 
+		newLeafNode(otherlv_1, grammarAccess.getClickAccess().getElemElemCrossReference_1_0()); 
 	}
-
-)
 
 )
 ))
@@ -1262,33 +1244,15 @@ ruleUnaryCondition returns [EObject current=null]
 )
 )(
 (
-(
-		{ 
-	        newCompositeNode(grammarAccess.getUnaryConditionAccess().getElemElemParserRuleCall_1_0_0()); 
-	    }
-		lv_elem_1_1=ruleElem		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getUnaryConditionRule());
-	        }
-       		set(
-       			$current, 
-       			"elem",
-        		lv_elem_1_1, 
-        		"Elem");
-	        afterParserOrEnumRuleCall();
-	    }
-
-    |		{
+		{
 			if ($current==null) {
 	            $current = createModelElement(grammarAccess.getUnaryConditionRule());
 	        }
         }
 	otherlv_1=RULE_ID
 	{
-		newLeafNode(otherlv_1, grammarAccess.getUnaryConditionAccess().getElemVariableCrossReference_1_0_1()); 
+		newLeafNode(otherlv_1, grammarAccess.getUnaryConditionAccess().getElemElemCrossReference_1_0()); 
 	}
-
-)
 
 )
 ))
@@ -1438,6 +1402,16 @@ ruleElem returns [EObject current=null]
     this_GetText_3=ruleGetText
     { 
         $current = $this_GetText_3.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getElemAccess().getVariableParserRuleCall_4()); 
+    }
+    this_Variable_4=ruleVariable
+    { 
+        $current = $this_Variable_4.current; 
         afterParserOrEnumRuleCall();
     }
 )

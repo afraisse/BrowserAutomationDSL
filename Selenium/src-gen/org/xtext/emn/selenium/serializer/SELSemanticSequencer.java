@@ -163,10 +163,17 @@ public class SELSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (elem=Elem | elem=[Variable|ID])
+	 *     elem=[Elem|ID]
 	 */
 	protected void sequence_Click(EObject context, Click semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, SelPackage.Literals.CLICK__ELEM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SelPackage.Literals.CLICK__ELEM));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getClickAccess().getElemElemIDTerminalRuleCall_1_0_1(), semanticObject.getElem());
+		feeder.finish();
 	}
 	
 	
@@ -316,10 +323,20 @@ public class SELSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (op=UnaryOp (elem=Elem | elem=[Variable|ID]))
+	 *     (op=UnaryOp elem=[Elem|ID])
 	 */
 	protected void sequence_UnaryCondition(EObject context, UnaryCondition semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, SelPackage.Literals.UNARY_CONDITION__OP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SelPackage.Literals.UNARY_CONDITION__OP));
+			if(transientValues.isValueTransient(semanticObject, SelPackage.Literals.UNARY_CONDITION__ELEM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SelPackage.Literals.UNARY_CONDITION__ELEM));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getUnaryConditionAccess().getOpUnaryOpEnumRuleCall_0_0(), semanticObject.getOp());
+		feeder.accept(grammarAccess.getUnaryConditionAccess().getElemElemIDTerminalRuleCall_1_0_1(), semanticObject.getElem());
+		feeder.finish();
 	}
 	
 	

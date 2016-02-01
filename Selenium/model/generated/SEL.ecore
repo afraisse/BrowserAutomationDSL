@@ -19,7 +19,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="body" upperBound="-1" eType="#//Instruction"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Variable">
+  <eClassifiers xsi:type="ecore:EClass" name="Variable" eSuperTypes="#//Elem">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Instruction"/>
@@ -61,12 +61,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="param" eType="#//Variable"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Check" eSuperTypes="#//Instruction">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="checkbox" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="checkbox" eType="#//Elem"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Click" eSuperTypes="#//Instruction">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="elem" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elem" eType="#//Elem"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Verify" eSuperTypes="#//Instruction">
     <eStructuralFeatures xsi:type="ecore:EReference" name="condition" eType="#//Condition"
@@ -74,14 +73,12 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GoTo" eSuperTypes="#//Instruction">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="link" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="link" eType="#//Elem" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Condition"/>
   <eClassifiers xsi:type="ecore:EClass" name="UnaryCondition" eSuperTypes="#//Condition">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="#//UnaryOp"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="elem" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elem" eType="#//Elem"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BinaryCondition" eSuperTypes="#//Condition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elem" eType="#//Elem" containment="true"/>
@@ -98,14 +95,23 @@
     <eLiterals name="IsEnabled" value="1" literal="IsEnabled"/>
     <eLiterals name="Exists" value="2" literal="Exists"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Elem">
+  <eClassifiers xsi:type="ecore:EClass" name="Elem"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GetButton" eSuperTypes="#//Elem">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="var" eType="#//Variable"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GetButton" eSuperTypes="#//Elem"/>
-  <eClassifiers xsi:type="ecore:EClass" name="GetLink" eSuperTypes="#//Elem"/>
-  <eClassifiers xsi:type="ecore:EClass" name="GetCheckbox" eSuperTypes="#//Elem"/>
-  <eClassifiers xsi:type="ecore:EClass" name="GetText" eSuperTypes="#//Elem"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GetLink" eSuperTypes="#//Elem">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="var" eType="#//Variable"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GetCheckbox" eSuperTypes="#//Elem">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="var" eType="#//Variable"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GetText" eSuperTypes="#//Elem">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="var" eType="#//Variable"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Elems">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="var" eType="#//Variable"/>

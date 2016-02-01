@@ -81,7 +81,7 @@ Check:
 ;
 
 Click:
-    'Click' elem=(Elem|[Variable])
+    'Click' elem=[Elem]
 ;
 
 Verify:
@@ -99,7 +99,7 @@ Condition:
 ;
 
 UnaryCondition:
-	op=UnaryOp elem=(Elem | [Variable])
+	op=UnaryOp elem=[Elem]
 ;
 
 BinaryCondition:
@@ -119,7 +119,7 @@ enum UnaryOp:
 ////////////////////////////////////////////////////////////////////////////
 
 Elem:
-    GetButton | GetLink | GetCheckbox | GetText
+    GetButton | GetLink | GetCheckbox | GetText | Variable
 ;
 
 GetButton:

@@ -2,7 +2,6 @@
  */
 package org.xtext.emn.selenium.sel;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,29 +22,29 @@ import org.eclipse.emf.ecore.EObject;
 public interface Click extends Instruction
 {
   /**
-   * Returns the value of the '<em><b>Elem</b></em>' containment reference.
+   * Returns the value of the '<em><b>Elem</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Elem</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Elem</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Elem</em>' containment reference.
-   * @see #setElem(EObject)
+   * @return the value of the '<em>Elem</em>' reference.
+   * @see #setElem(Elem)
    * @see org.xtext.emn.selenium.sel.SelPackage#getClick_Elem()
-   * @model containment="true"
+   * @model
    * @generated
    */
-  EObject getElem();
+  Elem getElem();
 
   /**
-   * Sets the value of the '{@link org.xtext.emn.selenium.sel.Click#getElem <em>Elem</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.emn.selenium.sel.Click#getElem <em>Elem</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Elem</em>' containment reference.
+   * @param value the new value of the '<em>Elem</em>' reference.
    * @see #getElem()
    * @generated
    */
-  void setElem(EObject value);
+  void setElem(Elem value);
 
 } // Click

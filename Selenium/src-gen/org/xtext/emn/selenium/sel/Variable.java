@@ -2,7 +2,6 @@
  */
 package org.xtext.emn.selenium.sel;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Variable extends EObject
+public interface Variable extends Elem
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.

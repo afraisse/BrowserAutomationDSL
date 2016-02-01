@@ -2,7 +2,6 @@
  */
 package org.xtext.emn.selenium.sel;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -58,12 +57,12 @@ public interface GoTo extends Instruction
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Link</em>' containment reference.
-   * @see #setLink(EObject)
+   * @see #setLink(Elem)
    * @see org.xtext.emn.selenium.sel.SelPackage#getGoTo_Link()
    * @model containment="true"
    * @generated
    */
-  EObject getLink();
+  Elem getLink();
 
   /**
    * Sets the value of the '{@link org.xtext.emn.selenium.sel.GoTo#getLink <em>Link</em>}' containment reference.
@@ -73,6 +72,6 @@ public interface GoTo extends Instruction
    * @see #getLink()
    * @generated
    */
-  void setLink(EObject value);
+  void setLink(Elem value);
 
 } // GoTo

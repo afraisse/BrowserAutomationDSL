@@ -851,29 +851,29 @@ public class SelPackageImpl extends EPackageImpl implements SelPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getElem_Value()
-  {
-    return (EAttribute)elemEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getElem_Var()
-  {
-    return (EReference)elemEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getGetButton()
   {
     return getButtonEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGetButton_Value()
+  {
+    return (EAttribute)getButtonEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getGetButton_Var()
+  {
+    return (EReference)getButtonEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -891,6 +891,26 @@ public class SelPackageImpl extends EPackageImpl implements SelPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getGetLink_Value()
+  {
+    return (EAttribute)getLinkEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getGetLink_Var()
+  {
+    return (EReference)getLinkEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getGetCheckbox()
   {
     return getCheckboxEClass;
@@ -901,9 +921,49 @@ public class SelPackageImpl extends EPackageImpl implements SelPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getGetCheckbox_Value()
+  {
+    return (EAttribute)getCheckboxEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getGetCheckbox_Var()
+  {
+    return (EReference)getCheckboxEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getGetText()
   {
     return getTextEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGetText_Value()
+  {
+    return (EAttribute)getTextEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getGetText_Var()
+  {
+    return (EReference)getTextEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1087,16 +1147,22 @@ public class SelPackageImpl extends EPackageImpl implements SelPackage
     createEReference(binaryConditionEClass, BINARY_CONDITION__PARAM);
 
     elemEClass = createEClass(ELEM);
-    createEAttribute(elemEClass, ELEM__VALUE);
-    createEReference(elemEClass, ELEM__VAR);
 
     getButtonEClass = createEClass(GET_BUTTON);
+    createEAttribute(getButtonEClass, GET_BUTTON__VALUE);
+    createEReference(getButtonEClass, GET_BUTTON__VAR);
 
     getLinkEClass = createEClass(GET_LINK);
+    createEAttribute(getLinkEClass, GET_LINK__VALUE);
+    createEReference(getLinkEClass, GET_LINK__VAR);
 
     getCheckboxEClass = createEClass(GET_CHECKBOX);
+    createEAttribute(getCheckboxEClass, GET_CHECKBOX__VALUE);
+    createEReference(getCheckboxEClass, GET_CHECKBOX__VAR);
 
     getTextEClass = createEClass(GET_TEXT);
+    createEAttribute(getTextEClass, GET_TEXT__VALUE);
+    createEReference(getTextEClass, GET_TEXT__VAR);
 
     elemsEClass = createEClass(ELEMS);
     createEAttribute(elemsEClass, ELEMS__VALUE);
@@ -1143,6 +1209,7 @@ public class SelPackageImpl extends EPackageImpl implements SelPackage
 
     // Add supertypes to classes
     sequenceEClass.getESuperTypes().add(this.getInstruction());
+    variableEClass.getESuperTypes().add(this.getElem());
     forAllEClass.getESuperTypes().add(this.getInstruction());
     doWhileEClass.getESuperTypes().add(this.getInstruction());
     ifThenElseEClass.getESuperTypes().add(this.getInstruction());
@@ -1210,23 +1277,23 @@ public class SelPackageImpl extends EPackageImpl implements SelPackage
     initEReference(getFill_Param(), this.getVariable(), null, "param", null, 0, 1, Fill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(checkEClass, Check.class, "Check", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getCheck_Checkbox(), ecorePackage.getEObject(), null, "checkbox", null, 0, 1, Check.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCheck_Checkbox(), this.getElem(), null, "checkbox", null, 0, 1, Check.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(clickEClass, Click.class, "Click", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getClick_Elem(), ecorePackage.getEObject(), null, "elem", null, 0, 1, Click.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getClick_Elem(), this.getElem(), null, "elem", null, 0, 1, Click.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(verifyEClass, Verify.class, "Verify", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getVerify_Condition(), this.getCondition(), null, "condition", null, 0, 1, Verify.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(goToEClass, GoTo.class, "GoTo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getGoTo_Value(), ecorePackage.getEString(), "value", null, 0, 1, GoTo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGoTo_Link(), ecorePackage.getEObject(), null, "link", null, 0, 1, GoTo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGoTo_Link(), this.getElem(), null, "link", null, 0, 1, GoTo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(conditionEClass, Condition.class, "Condition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(unaryConditionEClass, UnaryCondition.class, "UnaryCondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getUnaryCondition_Op(), this.getUnaryOp(), "op", null, 0, 1, UnaryCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getUnaryCondition_Elem(), ecorePackage.getEObject(), null, "elem", null, 0, 1, UnaryCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getUnaryCondition_Elem(), this.getElem(), null, "elem", null, 0, 1, UnaryCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(binaryConditionEClass, BinaryCondition.class, "BinaryCondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getBinaryCondition_Elem(), this.getElem(), null, "elem", null, 0, 1, BinaryCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1235,16 +1302,22 @@ public class SelPackageImpl extends EPackageImpl implements SelPackage
     initEReference(getBinaryCondition_Param(), this.getVariable(), null, "param", null, 0, 1, BinaryCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(elemEClass, Elem.class, "Elem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getElem_Value(), ecorePackage.getEString(), "value", null, 0, 1, Elem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getElem_Var(), this.getVariable(), null, "var", null, 0, 1, Elem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(getButtonEClass, GetButton.class, "GetButton", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getGetButton_Value(), ecorePackage.getEString(), "value", null, 0, 1, GetButton.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGetButton_Var(), this.getVariable(), null, "var", null, 0, 1, GetButton.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(getLinkEClass, GetLink.class, "GetLink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getGetLink_Value(), ecorePackage.getEString(), "value", null, 0, 1, GetLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGetLink_Var(), this.getVariable(), null, "var", null, 0, 1, GetLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(getCheckboxEClass, GetCheckbox.class, "GetCheckbox", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getGetCheckbox_Value(), ecorePackage.getEString(), "value", null, 0, 1, GetCheckbox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGetCheckbox_Var(), this.getVariable(), null, "var", null, 0, 1, GetCheckbox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(getTextEClass, GetText.class, "GetText", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getGetText_Value(), ecorePackage.getEString(), "value", null, 0, 1, GetText.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGetText_Var(), this.getVariable(), null, "var", null, 0, 1, GetText.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(elemsEClass, Elems.class, "Elems", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getElems_Value(), ecorePackage.getEString(), "value", null, 0, 1, Elems.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

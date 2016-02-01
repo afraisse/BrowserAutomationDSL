@@ -7,7 +7,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.emn.selenium.sel.SelPackage;
 import org.xtext.emn.selenium.sel.Variable;
@@ -25,7 +24,7 @@ import org.xtext.emn.selenium.sel.Variable;
  *
  * @generated
  */
-public class VariableImpl extends MinimalEObjectImpl.Container implements Variable
+public class VariableImpl extends ElemImpl implements Variable
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.

@@ -65,15 +65,15 @@ public class InternalSELLexer extends Lexer {
         super(input,state);
 
     }
-    public String getGrammarFileName() { return "../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g"; }
+    public String getGrammarFileName() { return "../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g"; }
 
     // $ANTLR start "T__11"
     public final void mT__11() throws RecognitionException {
         try {
             int _type = T__11;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:11:7: ( 'Contains' )
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:11:9: 'Contains'
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:11:7: ( 'Contains' )
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:11:9: 'Contains'
             {
             match("Contains"); 
 
@@ -93,8 +93,8 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = T__12;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:12:7: ( 'Equals' )
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:12:9: 'Equals'
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:12:7: ( 'Equals' )
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:12:9: 'Equals'
             {
             match("Equals"); 
 
@@ -114,8 +114,8 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:13:7: ( 'IsChecked' )
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:13:9: 'IsChecked'
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:13:7: ( 'IsChecked' )
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:13:9: 'IsChecked'
             {
             match("IsChecked"); 
 
@@ -135,8 +135,8 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:14:7: ( 'IsEnabled' )
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:14:9: 'IsEnabled'
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:14:7: ( 'IsEnabled' )
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:14:9: 'IsEnabled'
             {
             match("IsEnabled"); 
 
@@ -156,8 +156,8 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:15:7: ( 'Exists' )
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:15:9: 'Exists'
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:15:7: ( 'Exists' )
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:15:9: 'Exists'
             {
             match("Exists"); 
 
@@ -177,8 +177,8 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:16:7: ( 'Test' )
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:16:9: 'Test'
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:16:7: ( 'Test' )
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:16:9: 'Test'
             {
             match("Test"); 
 
@@ -198,8 +198,8 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:17:7: ( '{' )
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:17:9: '{'
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:17:7: ( '{' )
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:17:9: '{'
             {
             match('{'); 
 
@@ -218,8 +218,8 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:18:7: ( '}' )
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:18:9: '}'
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:18:7: ( '}' )
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:18:9: '}'
             {
             match('}'); 
 
@@ -238,8 +238,8 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:19:7: ( 'Sequence' )
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:19:9: 'Sequence'
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:19:7: ( 'Sequence' )
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:19:9: 'Sequence'
             {
             match("Sequence"); 
 
@@ -259,8 +259,8 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:20:7: ( '(' )
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:20:9: '('
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:20:7: ( '(' )
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:20:9: '('
             {
             match('('); 
 
@@ -279,8 +279,8 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:21:7: ( ')' )
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:21:9: ')'
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:21:7: ( ')' )
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:21:9: ')'
             {
             match(')'); 
 
@@ -299,8 +299,8 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:22:7: ( ',' )
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:22:9: ','
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:22:7: ( ',' )
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:22:9: ','
             {
             match(','); 
 
@@ -319,8 +319,8 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:23:7: ( 'ForAll' )
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:23:9: 'ForAll'
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:23:7: ( 'ForAll' )
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:23:9: 'ForAll'
             {
             match("ForAll"); 
 
@@ -340,8 +340,8 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:24:7: ( 'Do {' )
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:24:9: 'Do {'
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:24:7: ( 'Do {' )
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:24:9: 'Do {'
             {
             match("Do {"); 
 
@@ -361,8 +361,8 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:25:7: ( '} While (' )
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:25:9: '} While ('
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:25:7: ( '} While (' )
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:25:9: '} While ('
             {
             match("} While ("); 
 
@@ -382,8 +382,8 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:26:7: ( 'If' )
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:26:9: 'If'
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:26:7: ( 'If' )
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:26:9: 'If'
             {
             match("If"); 
 
@@ -403,8 +403,8 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:27:7: ( 'Else {' )
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:27:9: 'Else {'
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:27:7: ( 'Else {' )
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:27:9: 'Else {'
             {
             match("Else {"); 
 
@@ -424,8 +424,8 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:28:7: ( '=' )
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:28:9: '='
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:28:7: ( '=' )
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:28:9: '='
             {
             match('='); 
 
@@ -444,8 +444,8 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:29:7: ( 'Exec' )
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:29:9: 'Exec'
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:29:7: ( 'Exec' )
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:29:9: 'Exec'
             {
             match("Exec"); 
 
@@ -465,8 +465,8 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:30:7: ( 'Fill' )
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:30:9: 'Fill'
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:30:7: ( 'Fill' )
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:30:9: 'Fill'
             {
             match("Fill"); 
 
@@ -486,8 +486,8 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:31:7: ( 'with' )
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:31:9: 'with'
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:31:7: ( 'with' )
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:31:9: 'with'
             {
             match("with"); 
 
@@ -507,8 +507,8 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:32:7: ( 'Check' )
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:32:9: 'Check'
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:32:7: ( 'Check' )
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:32:9: 'Check'
             {
             match("Check"); 
 
@@ -528,8 +528,8 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:33:7: ( 'Click' )
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:33:9: 'Click'
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:33:7: ( 'Click' )
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:33:9: 'Click'
             {
             match("Click"); 
 
@@ -549,8 +549,8 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:34:7: ( 'Verify' )
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:34:9: 'Verify'
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:34:7: ( 'Verify' )
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:34:9: 'Verify'
             {
             match("Verify"); 
 
@@ -570,8 +570,8 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:35:7: ( 'GoTo' )
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:35:9: 'GoTo'
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:35:7: ( 'GoTo' )
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:35:9: 'GoTo'
             {
             match("GoTo"); 
 
@@ -591,8 +591,8 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:36:7: ( 'Not' )
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:36:9: 'Not'
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:36:7: ( 'Not' )
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:36:9: 'Not'
             {
             match("Not"); 
 
@@ -612,8 +612,8 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:37:7: ( 'GetButton' )
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:37:9: 'GetButton'
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:37:7: ( 'GetButton' )
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:37:9: 'GetButton'
             {
             match("GetButton"); 
 
@@ -633,8 +633,8 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = T__38;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:38:7: ( 'GetLink' )
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:38:9: 'GetLink'
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:38:7: ( 'GetLink' )
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:38:9: 'GetLink'
             {
             match("GetLink"); 
 
@@ -654,8 +654,8 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = T__39;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:39:7: ( 'GetCheckbox' )
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:39:9: 'GetCheckbox'
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:39:7: ( 'GetCheckbox' )
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:39:9: 'GetCheckbox'
             {
             match("GetCheckbox"); 
 
@@ -675,8 +675,8 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = T__40;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:40:7: ( 'GetText' )
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:40:9: 'GetText'
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:40:7: ( 'GetText' )
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:40:9: 'GetText'
             {
             match("GetText"); 
 
@@ -696,8 +696,8 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = T__41;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:41:7: ( 'GetButtons' )
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:41:9: 'GetButtons'
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:41:7: ( 'GetButtons' )
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:41:9: 'GetButtons'
             {
             match("GetButtons"); 
 
@@ -717,8 +717,8 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = T__42;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:42:7: ( 'GetCheckboxes' )
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:42:9: 'GetCheckboxes'
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:42:7: ( 'GetCheckboxes' )
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:42:9: 'GetCheckboxes'
             {
             match("GetCheckboxes"); 
 
@@ -738,8 +738,8 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = T__43;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:43:7: ( 'GetLinks' )
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:43:9: 'GetLinks'
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:43:7: ( 'GetLinks' )
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:43:9: 'GetLinks'
             {
             match("GetLinks"); 
 
@@ -759,10 +759,10 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4798:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4798:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4762:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4762:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4798:11: ( '^' )?
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4762:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -771,7 +771,7 @@ public class InternalSELLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4798:11: '^'
+                    // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4762:11: '^'
                     {
                     match('^'); 
 
@@ -789,7 +789,7 @@ public class InternalSELLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4798:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4762:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -802,7 +802,7 @@ public class InternalSELLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:
+            	    // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:
             	    {
             	    if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
             	        input.consume();
@@ -838,10 +838,10 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4800:10: ( ( '0' .. '9' )+ )
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4800:12: ( '0' .. '9' )+
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4764:10: ( ( '0' .. '9' )+ )
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4764:12: ( '0' .. '9' )+
             {
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4800:12: ( '0' .. '9' )+
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4764:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -855,7 +855,7 @@ public class InternalSELLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4800:13: '0' .. '9'
+            	    // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4764:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -887,10 +887,10 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4802:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4802:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4766:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4766:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4802:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4766:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -908,10 +908,10 @@ public class InternalSELLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4802:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4766:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4802:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4766:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -927,7 +927,7 @@ public class InternalSELLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4802:21: '\\\\' .
+                    	    // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4766:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -935,7 +935,7 @@ public class InternalSELLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4802:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4766:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -960,10 +960,10 @@ public class InternalSELLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4802:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4766:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4802:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4766:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -979,7 +979,7 @@ public class InternalSELLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4802:54: '\\\\' .
+                    	    // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4766:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -987,7 +987,7 @@ public class InternalSELLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4802:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4766:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1030,12 +1030,12 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4804:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4804:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4768:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4768:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4804:24: ( options {greedy=false; } : . )*
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4768:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -1060,7 +1060,7 @@ public class InternalSELLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4804:52: .
+            	    // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4768:52: .
             	    {
             	    matchAny(); 
 
@@ -1090,12 +1090,12 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4806:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4806:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4770:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4770:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4806:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4770:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -1108,7 +1108,7 @@ public class InternalSELLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4806:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4770:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1128,7 +1128,7 @@ public class InternalSELLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4806:40: ( ( '\\r' )? '\\n' )?
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4770:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1137,9 +1137,9 @@ public class InternalSELLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4806:41: ( '\\r' )? '\\n'
+                    // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4770:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4806:41: ( '\\r' )?
+                    // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4770:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -1148,7 +1148,7 @@ public class InternalSELLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4806:41: '\\r'
+                            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4770:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1180,10 +1180,10 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4808:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4808:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4772:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4772:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4808:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4772:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -1197,7 +1197,7 @@ public class InternalSELLexer extends Lexer {
 
                 switch (alt11) {
             	case 1 :
-            	    // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:
+            	    // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:
             	    {
             	    if ( (input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
             	        input.consume();
@@ -1237,8 +1237,8 @@ public class InternalSELLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4810:16: ( . )
-            // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4810:18: .
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4774:16: ( . )
+            // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:4774:18: .
             {
             matchAny(); 
 
@@ -1253,285 +1253,285 @@ public class InternalSELLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
         int alt12=40;
         alt12 = dfa12.predict(input);
         switch (alt12) {
             case 1 :
-                // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:10: T__11
+                // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:10: T__11
                 {
                 mT__11(); 
 
                 }
                 break;
             case 2 :
-                // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:16: T__12
+                // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:16: T__12
                 {
                 mT__12(); 
 
                 }
                 break;
             case 3 :
-                // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:22: T__13
+                // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:22: T__13
                 {
                 mT__13(); 
 
                 }
                 break;
             case 4 :
-                // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:28: T__14
+                // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:28: T__14
                 {
                 mT__14(); 
 
                 }
                 break;
             case 5 :
-                // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:34: T__15
+                // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:34: T__15
                 {
                 mT__15(); 
 
                 }
                 break;
             case 6 :
-                // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:40: T__16
+                // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:40: T__16
                 {
                 mT__16(); 
 
                 }
                 break;
             case 7 :
-                // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:46: T__17
+                // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:46: T__17
                 {
                 mT__17(); 
 
                 }
                 break;
             case 8 :
-                // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:52: T__18
+                // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:52: T__18
                 {
                 mT__18(); 
 
                 }
                 break;
             case 9 :
-                // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:58: T__19
+                // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:58: T__19
                 {
                 mT__19(); 
 
                 }
                 break;
             case 10 :
-                // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:64: T__20
+                // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:64: T__20
                 {
                 mT__20(); 
 
                 }
                 break;
             case 11 :
-                // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:70: T__21
+                // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:70: T__21
                 {
                 mT__21(); 
 
                 }
                 break;
             case 12 :
-                // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:76: T__22
+                // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:76: T__22
                 {
                 mT__22(); 
 
                 }
                 break;
             case 13 :
-                // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:82: T__23
+                // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:82: T__23
                 {
                 mT__23(); 
 
                 }
                 break;
             case 14 :
-                // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:88: T__24
+                // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:88: T__24
                 {
                 mT__24(); 
 
                 }
                 break;
             case 15 :
-                // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:94: T__25
+                // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:94: T__25
                 {
                 mT__25(); 
 
                 }
                 break;
             case 16 :
-                // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:100: T__26
+                // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:100: T__26
                 {
                 mT__26(); 
 
                 }
                 break;
             case 17 :
-                // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:106: T__27
+                // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:106: T__27
                 {
                 mT__27(); 
 
                 }
                 break;
             case 18 :
-                // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:112: T__28
+                // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:112: T__28
                 {
                 mT__28(); 
 
                 }
                 break;
             case 19 :
-                // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:118: T__29
+                // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:118: T__29
                 {
                 mT__29(); 
 
                 }
                 break;
             case 20 :
-                // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:124: T__30
+                // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:124: T__30
                 {
                 mT__30(); 
 
                 }
                 break;
             case 21 :
-                // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:130: T__31
+                // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:130: T__31
                 {
                 mT__31(); 
 
                 }
                 break;
             case 22 :
-                // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:136: T__32
+                // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:136: T__32
                 {
                 mT__32(); 
 
                 }
                 break;
             case 23 :
-                // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:142: T__33
+                // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:142: T__33
                 {
                 mT__33(); 
 
                 }
                 break;
             case 24 :
-                // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:148: T__34
+                // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:148: T__34
                 {
                 mT__34(); 
 
                 }
                 break;
             case 25 :
-                // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:154: T__35
+                // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:154: T__35
                 {
                 mT__35(); 
 
                 }
                 break;
             case 26 :
-                // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:160: T__36
+                // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:160: T__36
                 {
                 mT__36(); 
 
                 }
                 break;
             case 27 :
-                // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:166: T__37
+                // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:166: T__37
                 {
                 mT__37(); 
 
                 }
                 break;
             case 28 :
-                // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:172: T__38
+                // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:172: T__38
                 {
                 mT__38(); 
 
                 }
                 break;
             case 29 :
-                // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:178: T__39
+                // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:178: T__39
                 {
                 mT__39(); 
 
                 }
                 break;
             case 30 :
-                // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:184: T__40
+                // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:184: T__40
                 {
                 mT__40(); 
 
                 }
                 break;
             case 31 :
-                // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:190: T__41
+                // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:190: T__41
                 {
                 mT__41(); 
 
                 }
                 break;
             case 32 :
-                // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:196: T__42
+                // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:196: T__42
                 {
                 mT__42(); 
 
                 }
                 break;
             case 33 :
-                // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:202: T__43
+                // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:202: T__43
                 {
                 mT__43(); 
 
                 }
                 break;
             case 34 :
-                // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:208: RULE_ID
+                // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:208: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
             case 35 :
-                // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:216: RULE_INT
+                // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:216: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
             case 36 :
-                // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:225: RULE_STRING
+                // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:225: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
             case 37 :
-                // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:237: RULE_ML_COMMENT
+                // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:237: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
             case 38 :
-                // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:253: RULE_SL_COMMENT
+                // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:253: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
             case 39 :
-                // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:269: RULE_WS
+                // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:269: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
             case 40 :
-                // ../org.xtext.emn.selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:277: RULE_ANY_OTHER
+                // ../Selenium.ui/src-gen/org/xtext/emn/selenium/ui/contentassist/antlr/internal/InternalSEL.g:1:277: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
