@@ -1,0 +1,32 @@
+Sequence goToCampus {
+	Sequence goToLink(link) {
+		GoTo link
+	}
+	Exec goToLink("http://campus.mines-nantes.fr")
+	connexion = GetLink "connexion"
+	czam = GetButton "Cliquez ici ou sur le logo C'zam pour vous identifier"
+	Click connexion
+	Click czam
+}
+
+Test "Firefox" {
+	Exec goToCampus    
+}
+
+Sequence connexion {
+	exec goToCampus
+	Fill "username" with "mtisi08"
+	Fill "password" with "12345"
+	Check GetCheckbox "warn"
+	Click GetButton "Connexion"
+	GoTo "https://campusneo.mines-nantes.fr/campus/course/view.php?id=1571"
+	Verify GetLink "Consulter le profil" Contains "Massimo Tisi"
+}
+
+Test "Firefox" {
+	Exec connexion
+}
+
+Test "Chrome" {
+	Exec connexion
+}

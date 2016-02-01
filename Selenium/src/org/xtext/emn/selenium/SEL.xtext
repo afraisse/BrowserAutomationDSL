@@ -1,0 +1,155 @@
+grammar org.xtext.emn.selenium.SEL with org.eclipse.xtext.common.Terminals
+
+generate sel "http://www.xtext.org/emn/selenium/SEL"
+
+////////////////////////////////////////////////////////////////////////////
+// PROGRAM /////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+
+Program:
+    (sequences+=Sequence | tests+=Test)*
+;
+
+////////////////////////////////////////////////////////////////////////////
+// MAIN INSTRUCTIONS ///////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+
+Test:
+    'Test' browser=STRING '{'
+        body+=Instruction*
+    '}'    
+;
+
+Sequence:
+    'Sequence' name=ID ('(' parameters+=Variable (',' parameters+=Variable)* ')')? '{'
+        body+=Instruction*
+    '}'
+;
+
+Variable:
+    name=ID
+;
+
+////////////////////////////////////////////////////////////////////////////
+// INSTRUCTIONS ////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+
+Instruction:
+    Sequence | ForAll | DoWhile | IfThenElse |
+    Affectation | Exec | Fill | Check | Click | Verify | GoTo
+;
+
+// BLOCS
+
+ForAll:
+    'ForAll' elems=Elems it=Variable '{'
+        body+=Instruction*
+    '}'
+;
+
+DoWhile:
+    'Do {'
+        body+=Instruction*
+    '} While (' condition=Condition ')'
+;
+
+IfThenElse:
+	'If' condition=Condition '{'
+		then+=Instruction*
+	'}' 
+	('Else {'
+		else+=Instruction*
+	'}')?
+;
+
+// OPERATIONS
+
+Affectation:
+	variable=Variable '=' elem=Elem
+;
+
+Exec:
+    'Exec' sequence=[Sequence] ('('params+=STRING (',' params+=STRING)* ')')?
+;
+
+Fill:
+    'Fill' field=STRING 'with' (value=STRING | param=[Variable])
+;
+
+Check:
+    'Check' checkbox=(GetCheckbox|[Variable]) 
+;
+
+Click:
+    'Click' elem=(Elem|[Variable])
+;
+
+Verify:
+    'Verify' condition=Condition
+;
+
+GoTo:
+    'GoTo' (value=STRING | link=([Variable]|GetLink))    
+;
+
+// CONDITIONS
+
+Condition:
+	'Not'? (UnaryCondition | BinaryCondition)
+;
+
+UnaryCondition:
+	op=UnaryOp elem=(Elem | [Variable])
+;
+
+BinaryCondition:
+	elem=Elem op=BinaryOp (value=STRING | param=[Variable])
+;
+
+enum BinaryOp:
+    Contains = 'Contains' | Equals =  'Equals'
+;
+
+enum UnaryOp:
+    IsChecked = 'IsChecked' | IsEnabled = 'IsEnabled' | Exists = 'Exists'
+;
+
+////////////////////////////////////////////////////////////////////////////
+// ELEMENTS ////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+
+Elem:
+    GetButton | GetLink | GetCheckbox | GetText
+;
+
+GetButton:
+    'GetButton' (value=STRING | var=[Variable])
+;
+
+GetLink:
+    'GetLink' (value=STRING | var=[Variable])
+;
+
+GetCheckbox:
+    'GetCheckbox' (value=STRING | var=[Variable])
+;
+
+GetText:
+	'GetText' (value=STRING | var=[Variable])
+;
+
+Elems:
+    GetButtons | GetCheckboxes | GetLinks 
+;
+
+GetButtons:
+	'GetButtons' (value=STRING | var=[Variable])?
+;
+
+GetCheckboxes:
+	'GetCheckboxes' (value=STRING | var=[Variable])?
+;
+
+GetLinks:
+	'GetLinks' (value=STRING | var=[Variable])?
+;

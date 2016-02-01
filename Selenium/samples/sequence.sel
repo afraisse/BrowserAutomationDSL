@@ -1,0 +1,12 @@
+Sequence connexion {
+	Fill "username" with "mtisi08"
+	Fill "password" with "12345"
+	Check 
+		GetCheckbox "warn"
+	Click 
+		GetButton "Connexion"
+	Goto "https://campusneo.mines-nantes.fr/campus/course/view.php?id=1571"
+	Verify 
+		GetLink "Consulter le profil" 
+		Contains "Massimo Tisi"
+}

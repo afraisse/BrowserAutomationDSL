@@ -1,0 +1,16 @@
+Sequence doWhile {
+	GoTo "http://www.soccers.fr/index.php?/register/"
+	Do {
+		previousUsername = GetText "username"
+		Add "a" in "username"
+		newUsername = GetText "username"
+	} While (Not previousUsername Equals newUsername)
+}
+
+Test "Firefox" {
+	Exec doWhile   
+}
+
+Test "Chrome" {
+	Exec doWhile
+}
