@@ -6,7 +6,7 @@ import org.eclipse.xtext.ui.generator.*
 
 var grammarURI = "classpath:/org/xtext/emn/selenium/SEL.xtext"
 var fileExtensions = "sel"
-var projectName = "org.xtext.emn.selenium"
+var projectName = "Selenium"
 var runtimeProject = "../${projectName}"
 var generateXtendStub = true
 var encoding = "UTF-8"
