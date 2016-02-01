@@ -15,7 +15,8 @@
 /Selenium*/.metadata
 /Selenium*/.project
 /Selenium*/.settings
-Selenium.ui/xtend-gen/org/xtext/emn/selenium/ui/*/*.xtendbin
+/Selenium.ui/xtend-gen/org/xtext/emn/selenium/ui/*/*.xtendbin
+/Selenium.ui/xtend-gen/org/xtext/emn/selenium/ui/*/*.trace
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
