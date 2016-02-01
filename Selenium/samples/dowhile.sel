@@ -2,7 +2,7 @@ Sequence doWhile {
 	GoTo "http://www.soccers.fr/index.php?/register/"
 	Do {
 		previousUsername = GetText "username"
-		Add "a" in "username"
+		Fill "username" with "yo"
 		newUsername = GetText "username"
 	} While (Not previousUsername Equals newUsername)
 }

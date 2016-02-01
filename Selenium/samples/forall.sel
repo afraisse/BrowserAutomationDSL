@@ -2,7 +2,7 @@ Test "Firefox" {
 
 	GoTo "http://www.w3schools.com/html/tryit.asp?filename=tryhtml_checkbox"
 	ForAll GetCheckboxes c {
-		If (Not IsChecked c) {
+		If Not IsChecked c {
 			Check c
 		} 
 	}
