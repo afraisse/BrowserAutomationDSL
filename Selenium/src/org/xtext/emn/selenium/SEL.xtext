@@ -62,10 +62,10 @@ IfThenElse:
     '}')?
 ;
 
-// OPERATIONS
+// INSTRUCTIONS
 
 Affectation:
-    variable=Variable '=' elem=Elem
+    variable=Variable '=' value=Expression
 ;
 
 Exec:
@@ -73,7 +73,7 @@ Exec:
 ;
 
 Fill:
-    'Fill' field=STRING 'with' value=Value
+    'Fill' field=(GetInput|[Variable]) 'with' value=Value
 ;
 
 Check:
@@ -84,30 +84,30 @@ Click:
     'Click' button=(GetButton|[Variable])
 ;
 
-Verify:
-    'Verify' condition=Condition
+GoTo:
+    'GoTo' link=(GetLink|[Variable])    
 ;
 
-GoTo:
-    'GoTo' (value=STRING | link=(GetLink|[Variable]))    
+Verify:
+    'Verify' condition=Condition
 ;
 
 // CONDITIONS
 
 Condition:
-    Not? (UnaryCondition | BinaryCondition)
+    (UnaryCondition | BinaryCondition | NotCondition)
 ;
 
-Not:
-    'Not'
+NotCondition:
+	'Not' condition=Condition
 ;
 
 UnaryCondition:
-    op=UnaryOp elem=(Elem | [Variable])
+    op=UnaryOp elem=Expression
 ;
 
 BinaryCondition:
-    elem=Elem op=BinaryOp value=Value
+    elem=Expression op=BinaryOp value=Value
 ;
 
 enum BinaryOp:
@@ -119,12 +119,14 @@ enum UnaryOp:
 ;
 
 ////////////////////////////////////////////////////////////////////////////
-// ELEMENTS ////////////////////////////////////////////////////////////////
+// Expression ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////
 
-Elem:
-    GetButton | GetLink | GetCheckbox | GetText
+// Quelque chose qui peut retourner une valeur
+Expression:
+	GetButton | GetLink | GetCheckbox | GetText | GetInput | Value
 ;
+
 
 Value:
     (str=STRING | var=[Variable])
@@ -144,6 +146,10 @@ GetCheckbox:
 
 GetText:
     'GetText' value=Value
+;
+
+GetInput:
+	'GetInput' value=Value
 ;
 
 Elems:
