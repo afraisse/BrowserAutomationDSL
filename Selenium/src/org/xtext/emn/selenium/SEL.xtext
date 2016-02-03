@@ -62,7 +62,7 @@ IfThenElse:
     '}')?
 ;
 
-// OPERATIONS
+// INSTRUCTIONS
 
 Affectation:
     variable=Variable '=' elem=Elem
@@ -73,7 +73,7 @@ Exec:
 ;
 
 Fill:
-    'Fill' field=STRING 'with' value=Value
+    'Fill' field=(GetInput|[Variable]) 'with' value=Value
 ;
 
 Check:
@@ -84,22 +84,22 @@ Click:
     'Click' button=(GetButton|[Variable])
 ;
 
-Verify:
-    'Verify' condition=Condition
+GoTo:
+    'GoTo' link=(GetLink|[Variable])    
 ;
 
-GoTo:
-    'GoTo' (value=STRING | link=(GetLink|[Variable]))    
+Verify:
+    'Verify' condition=Condition
 ;
 
 // CONDITIONS
 
 Condition:
-    Not? (UnaryCondition | BinaryCondition)
+    (UnaryCondition | BinaryCondition | NotCondition)
 ;
 
-Not:
-    'Not'
+NotCondition:
+	'Not' condition=Condition
 ;
 
 UnaryCondition:
@@ -123,7 +123,7 @@ enum UnaryOp:
 ////////////////////////////////////////////////////////////////////////////
 
 Elem:
-    GetButton | GetLink | GetCheckbox | GetText
+    GetButton | GetLink | GetCheckbox | GetText | GetInput
 ;
 
 Value:
@@ -144,6 +144,10 @@ GetCheckbox:
 
 GetText:
     'GetText' value=Value
+;
+
+GetInput:
+	'GetInput' value=Value
 ;
 
 Elems:
