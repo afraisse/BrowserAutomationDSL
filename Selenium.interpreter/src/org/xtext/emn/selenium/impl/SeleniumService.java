@@ -45,16 +45,28 @@ public class SeleniumService implements ISeleniumService {
 	public void gotoLink(String url) {
 		driver.get(url);
 	}
-	
-	
+
+
 	/* (non-Javadoc)
 	 * @see org.xtext.emn.selenium.interpreter.ISeleniumService#fillInput(org.openqa.selenium.WebElement, java.lang.String)
 	 */
 	@Override
 	public void fillInput(WebElement e, String str) {
-		//TODO
+		e.sendKeys(str);
+		/*String script="var array = document.getElementsByTagName('"+e.getTagName()+"'); "+
+				"for(var i=0; i< array.length; ++i) { "+
+				"if(array[i].getAttribute('innerHTML') == '"+e.getText()+"')"+
+				"{array[i].value='"+ str +"'}  }";
+		
+		if(driver instanceof FirefoxDriver) {
+			((FirefoxDriver)driver).executeScript(script); 
+		} else if(driver instanceof ChromeDriver) {
+			((ChromeDriver)driver).executeScript(script); 
+		} else if(driver instanceof InternetExplorerDriver) {
+			((InternetExplorerDriver)driver).executeScript(script); 
+		}*/
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see org.xtext.emn.selenium.interpreter.ISeleniumService#clickButton(org.openqa.selenium.WebElement)
 	 */
@@ -62,47 +74,53 @@ public class SeleniumService implements ISeleniumService {
 	public void clickButton(WebElement e) {
 		e.click();
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see org.xtext.emn.selenium.interpreter.ISeleniumService#isChecked(org.openqa.selenium.WebElement)
 	 */
 	@Override
 	public boolean isChecked(WebElement e) {
-		return true; //TODO
+		//TODO TEST
+		System.out.println("isChecked: " +e.getAttribute("checked"));
+		return e.getAttribute("checked").equalsIgnoreCase("true");
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see org.xtext.emn.selenium.interpreter.ISeleniumService#isEnabled(org.openqa.selenium.WebElement)
 	 */
 	@Override
 	public boolean isEnabled(WebElement e) {
-		return true; //TODO
+		//TODO TEST
+		System.out.println("isEnabled: " +e.getAttribute("isEnabled"));
+		return e.getAttribute("disabled").equalsIgnoreCase("false");
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see org.xtext.emn.selenium.interpreter.ISeleniumService#exists(org.openqa.selenium.WebElement)
 	 */
 	@Override
 	public boolean exists(WebElement e) {
+		//TODO Change 
+		
 		return true; //TODO
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see org.xtext.emn.selenium.interpreter.ISeleniumService#contains(org.openqa.selenium.WebElement, java.lang.String)
 	 */
 	@Override
 	public boolean contains(WebElement e, String s) {
-		return true; //TODO
+		return e.getAttribute("value").equalsIgnoreCase(s) || e.getAttribute("innerHTML").equalsIgnoreCase(s);
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see org.xtext.emn.selenium.interpreter.ISeleniumService#equals(org.openqa.selenium.WebElement, java.lang.String)
 	 */
 	@Override
 	public boolean equals(WebElement e, String s) {
-		return true; //TODO
+		return e.getAttribute("value").equalsIgnoreCase(s) || e.getAttribute("innerHTML").equalsIgnoreCase(s);
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see org.xtext.emn.selenium.interpreter.ISeleniumService#getButton(java.lang.String)
 	 */
@@ -110,7 +128,7 @@ public class SeleniumService implements ISeleniumService {
 	public WebElement getButton(String id) {
 		return null; //TODO
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see org.xtext.emn.selenium.interpreter.ISeleniumService#getLink(java.lang.String)
 	 */
@@ -118,7 +136,7 @@ public class SeleniumService implements ISeleniumService {
 	public WebElement getLink(String id) {
 		return null; //TODO
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see org.xtext.emn.selenium.interpreter.ISeleniumService#getCheckbox(java.lang.String)
 	 */
@@ -126,7 +144,7 @@ public class SeleniumService implements ISeleniumService {
 	public WebElement getCheckbox(String id) {
 		return null; //TODO
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see org.xtext.emn.selenium.interpreter.ISeleniumService#getText(java.lang.String)
 	 */
@@ -134,7 +152,7 @@ public class SeleniumService implements ISeleniumService {
 	public String getText(String id) {
 		return null; //TODO
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see org.xtext.emn.selenium.interpreter.ISeleniumService#getInput(java.lang.String)
 	 */
@@ -142,7 +160,7 @@ public class SeleniumService implements ISeleniumService {
 	public WebElement getInput(String id) {
 		return null; //TODO
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see org.xtext.emn.selenium.interpreter.ISeleniumService#getButtons(java.lang.String)
 	 */
@@ -150,7 +168,7 @@ public class SeleniumService implements ISeleniumService {
 	public List<WebElement> getButtons(String id) {
 		return null; //TODO
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see org.xtext.emn.selenium.interpreter.ISeleniumService#getLinks(java.lang.String)
 	 */
@@ -158,7 +176,7 @@ public class SeleniumService implements ISeleniumService {
 	public List<WebElement> getLinks(String id) {
 		return null; //TODO
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see org.xtext.emn.selenium.interpreter.ISeleniumService#getCheckboxes(java.lang.String)
 	 */
@@ -166,7 +184,7 @@ public class SeleniumService implements ISeleniumService {
 	public List<WebElement> getCheckboxes(String id) {
 		return null; //TODO
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see org.xtext.emn.selenium.interpreter.ISeleniumService#getInputs(java.lang.String)
 	 */
