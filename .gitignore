@@ -15,9 +15,9 @@
 /Selenium.ui/xtend-gen/org/xtext/emn/selenium/ui/*/*.xtendbin
 /Selenium.ui/xtend-gen/org/xtext/emn/selenium/ui/*/*._trace
 # Generated sources
-/Selenium*/src-gen/
-/Selenium/model/
-/Selenium*/xtend-gen
+/Selenium*/src-gen/*
+/Selenium/model/*
+/Selenium*/xtend-gen/*
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
