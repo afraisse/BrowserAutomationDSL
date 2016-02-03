@@ -14,7 +14,7 @@ Test "Firefox" {
 }
 
 Sequence connexion {
-	exec goToCampus
+	Exec goToCampus
 	Fill "username" with "mtisi08"
 	Fill "password" with "12345"
 	Check GetCheckbox "warn"
