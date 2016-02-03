@@ -339,7 +339,7 @@
             point="org.eclipse.ui.ide.markerResolution">
         <markerResolutionGenerator
             class="org.xtext.emn.selenium.ui.SELExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-            markerType="org.xtext.emn.selenium.ui.sel.check.fast">
+            markerType="Selenium.ui.sel.check.fast">
             <attribute
                 name="FIXABLE_KEY"
                 value="true">
@@ -347,7 +347,7 @@
         </markerResolutionGenerator>
         <markerResolutionGenerator
             class="org.xtext.emn.selenium.ui.SELExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-            markerType="org.xtext.emn.selenium.ui.sel.check.normal">
+            markerType="Selenium.ui.sel.check.normal">
             <attribute
                 name="FIXABLE_KEY"
                 value="true">
@@ -355,7 +355,7 @@
         </markerResolutionGenerator>
         <markerResolutionGenerator
             class="org.xtext.emn.selenium.ui.SELExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-            markerType="org.xtext.emn.selenium.ui.sel.check.expensive">
+            markerType="Selenium.ui.sel.check.expensive">
             <attribute
                 name="FIXABLE_KEY"
                 value="true">
