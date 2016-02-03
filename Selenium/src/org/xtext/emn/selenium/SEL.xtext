@@ -16,7 +16,7 @@ Program:
 
 Test:
     'Test' browser=STRING '{'
-        body+=Instruction*
+        body+=Exec*
     '}'    
 ;
 
@@ -73,7 +73,7 @@ Exec:
 ;
 
 Fill:
-    'Fill' field=STRING 'with' (value=STRING | param=[Variable])
+    'Fill' field=STRING 'with' value=Value
 ;
 
 Check:
