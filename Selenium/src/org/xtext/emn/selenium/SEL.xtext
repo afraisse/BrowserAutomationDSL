@@ -54,18 +54,18 @@ DoWhile:
 ;
 
 IfThenElse:
-	'If' condition=Condition '{'
-		then+=Instruction*
-	'}' 
-	('Else {'
-		else+=Instruction*
-	'}')?
+    'If' condition=Condition '{'
+        then+=Instruction*
+    '}' 
+    ('Else {'
+        else+=Instruction*
+    '}')?
 ;
 
 // OPERATIONS
 
 Affectation:
-	variable=Variable '=' elem=Elem
+    variable=Variable '=' elem=Elem
 ;
 
 Exec:
@@ -81,7 +81,7 @@ Check:
 ;
 
 Click:
-    'Click' elem=[Elem]
+    'Click' button=(GetButton|[Variable])
 ;
 
 Verify:
@@ -89,21 +89,25 @@ Verify:
 ;
 
 GoTo:
-    'GoTo' (value=STRING | link=([Variable]|GetLink))    
+    'GoTo' (value=STRING | link=(GetLink|[Variable]))    
 ;
 
 // CONDITIONS
 
 Condition:
-	'Not'? (UnaryCondition | BinaryCondition)
+    Not? (UnaryCondition | BinaryCondition)
+;
+
+Not:
+    'Not'
 ;
 
 UnaryCondition:
-	op=UnaryOp elem=[Elem]
+    op=UnaryOp elem=(Elem | [Variable])
 ;
 
 BinaryCondition:
-	elem=Elem op=BinaryOp (value=STRING | param=[Variable])
+    elem=Elem op=BinaryOp value=Value
 ;
 
 enum BinaryOp:
@@ -119,23 +123,27 @@ enum UnaryOp:
 ////////////////////////////////////////////////////////////////////////////
 
 Elem:
-    GetButton | GetLink | GetCheckbox | GetText | Variable
+    GetButton | GetLink | GetCheckbox | GetText
+;
+
+Value:
+    (str=STRING | var=[Variable])
 ;
 
 GetButton:
-    'GetButton' (value=STRING | var=[Variable])
+    'GetButton' value=Value
 ;
 
 GetLink:
-    'GetLink' (value=STRING | var=[Variable])
+    'GetLink' value=Value
 ;
 
 GetCheckbox:
-    'GetCheckbox' (value=STRING | var=[Variable])
+    'GetCheckbox' value=Value
 ;
 
 GetText:
-	'GetText' (value=STRING | var=[Variable])
+    'GetText' value=Value
 ;
 
 Elems:
@@ -143,13 +151,13 @@ Elems:
 ;
 
 GetButtons:
-	'GetButtons' (value=STRING | var=[Variable])?
+    'GetButtons' value=Value?
 ;
 
 GetCheckboxes:
-	'GetCheckboxes' (value=STRING | var=[Variable])?
+    'GetCheckboxes' value=Value?
 ;
 
 GetLinks:
-	'GetLinks' (value=STRING | var=[Variable])?
+    'GetLinks' value=Value?
 ;
