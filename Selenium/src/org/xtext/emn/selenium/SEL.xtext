@@ -65,7 +65,7 @@ IfThenElse:
 // INSTRUCTIONS
 
 Affectation:
-    variable=Variable '=' elem=Elem
+    variable=Variable '=' value=Expression
 ;
 
 Exec:
@@ -103,11 +103,11 @@ NotCondition:
 ;
 
 UnaryCondition:
-    op=UnaryOp elem=(Elem | [Variable])
+    op=UnaryOp elem=Expression
 ;
 
 BinaryCondition:
-    elem=Elem op=BinaryOp value=Value
+    elem=Expression op=BinaryOp value=Value
 ;
 
 enum BinaryOp:
@@ -119,12 +119,14 @@ enum UnaryOp:
 ;
 
 ////////////////////////////////////////////////////////////////////////////
-// ELEMENTS ////////////////////////////////////////////////////////////////
+// Expression ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////
 
-Elem:
-    GetButton | GetLink | GetCheckbox | GetText | GetInput
+// Quelque chose qui peut retourner une valeur
+Expression:
+	GetButton | GetLink | GetCheckbox | GetText | GetInput | Value
 ;
+
 
 Value:
     (str=STRING | var=[Variable])
