@@ -69,7 +69,7 @@ Affectation:
 ;
 
 Exec:
-    'Exec' sequence=[Sequence] ('('params+=STRING (',' params+=STRING)* ')')?
+    'Exec' sequence=[Sequence] ('('params+=Value (',' params+=Value)* ')')?
 ;
 
 Fill:
