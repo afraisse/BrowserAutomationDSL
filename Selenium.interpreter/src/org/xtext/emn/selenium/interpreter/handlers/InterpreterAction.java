@@ -44,7 +44,7 @@ public class InterpreterAction implements IWorkbenchWindowActionDelegate {
 				EObject e =  state.getAllContents().next();
 				if (e instanceof Program) {
 					Program program = (Program) e;
-					new Interpreter().execute(program);
+					new Interpreter().run(program);
 				}
 				
 				return null;
