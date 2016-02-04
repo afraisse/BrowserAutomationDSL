@@ -21,5 +21,6 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.xtext.emn.selenium.ui.quickfix,
  org.xtext.emn.selenium.ui.contentassist,
  org.xtext.emn.selenium.ui.internal,
- org.xtext.emn.selenium.ui.contentassist.antlr
+ org.xtext.emn.selenium.ui.contentassist.antlr,
+ org.xtext.emn.selenium.ui.contentassist.antlr.internal
 Bundle-Activator: org.xtext.emn.selenium.ui.internal.SELActivator
