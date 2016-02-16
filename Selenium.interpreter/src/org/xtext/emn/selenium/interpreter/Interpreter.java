@@ -84,8 +84,9 @@ public class Interpreter {
 			EList<Variable> parameters = seq.getParameters();
 			EList<Value> values = exec.getParams();
 			int i = 0;
-			while (i++ < parameters.size()) {
-				seqEnv.put(parameters.get(i).getName(), values.get(i));
+			while (i < parameters.size()) {
+				seqEnv.put(parameters.get(i).getName(), this.evaluateValue(values.get(i)));
+				i++;
 			}
 			env.put(seq.getName(), seqEnv);
 
