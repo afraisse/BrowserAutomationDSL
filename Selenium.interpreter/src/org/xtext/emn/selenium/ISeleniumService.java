@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 public interface ISeleniumService {
 
 	void setDriver(String browserName);
+	
+	void closeDriver();
 
 	void gotoLink(WebElement link);
 

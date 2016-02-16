@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="Selenium" version="10.0.0.201505222000">
+  <ownedViewpoints name="Sel_viewpoint">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Program" domainClass="sel.Program" enablePopupBars="true">
+      <defaultLayer name="Default">
+        <nodeMappings name="Program" domainClass="sel.Program"/>
+        <nodeMappings name="Test" domainClass="sel.Test">
+          <style xsi:type="style:BundledImageDescription" labelExpression="feature:browser" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Sequence" domainClass="sel.Sequence">
+          <style xsi:type="style:BundledImageDescription" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Variable" domainClass="sel.Variable"/>
+        <nodeMappings name="Instruction" domainClass="sel.Instruction"/>
+        <nodeMappings name="ForAll" domainClass="sel.ForAll"/>
+        <nodeMappings name="DoWhile" domainClass="sel.DoWhile"/>
+        <nodeMappings name="IfThenElse" domainClass="sel.IfThenElse"/>
+        <nodeMappings name="Affectation" domainClass="sel.Affectation"/>
+        <nodeMappings name="Exec" domainClass="sel.Exec">
+          <style xsi:type="style:LozengeNodeDescription" labelExpression="Exec" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Fill" domainClass="sel.Fill"/>
+        <nodeMappings name="Check" domainClass="seq.Check"/>
+        <nodeMappings name="Click" domainClass="seq.Click"/>
+        <nodeMappings name="GoTo" domainClass="sel.GoTo">
+          <style xsi:type="style:EllipseNodeDescription" labelExpression="GoTo" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Verify" domainClass="sel.Verify"/>
+        <nodeMappings name="Condition" domainClass="sel.Condition"/>
+        <nodeMappings name="NotCondition" domainClass="sel.NotCondition"/>
+        <nodeMappings name="UnaryCondition" domainClass="sel.UnaryCondition"/>
+        <nodeMappings name="BinaryCondition" domainClass="sel.BinaryCondition"/>
+        <nodeMappings name="Expression" domainClass="sel.Expression"/>
+        <nodeMappings name="Value" domainClass="sel.Value"/>
+        <nodeMappings name="GetButton" domainClass="sel.GetButton"/>
+        <nodeMappings name="GetLink" domainClass="sel.GetLink"/>
+        <nodeMappings name="GetCheckbox" domainClass="sel.GetCheckbox"/>
+        <nodeMappings name="GetText" domainClass="sel.GetText"/>
+        <nodeMappings name="GetInput" domainClass="sel.GetInput"/>
+        <nodeMappings name="Elems" domainClass="sel.Elems"/>
+        <nodeMappings name="GetButtons" domainClass="sel.GetButtons"/>
+        <nodeMappings name="GetCheckboxes" domainClass="sel.GetCheckboxes"/>
+        <nodeMappings name="GetLinks" domainClass="sel.GetLinks"/>
+        <edgeMappings name="Test_Exec" sourceMapping="//@ownedViewpoints[name='Sel_viewpoint']/@ownedRepresentations[name='Program']/@defaultLayer/@nodeMappings[name='Test']" targetMapping="//@ownedViewpoints[name='Sel_viewpoint']/@ownedRepresentations[name='Program']/@defaultLayer/@nodeMappings[name='Exec']" targetFinderExpression="feature:body">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Exec_Sequence" sourceMapping="//@ownedViewpoints[name='Sel_viewpoint']/@ownedRepresentations[name='Program']/@defaultLayer/@nodeMappings[name='Exec']" targetMapping="//@ownedViewpoints[name='Sel_viewpoint']/@ownedRepresentations[name='Program']/@defaultLayer/@nodeMappings[name='Sequence']" targetFinderExpression="feature:sequence">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings sourceMapping="//@ownedViewpoints[name='Sel_viewpoint']/@ownedRepresentations[name='Program']/@defaultLayer/@nodeMappings[name='Exec']" targetMapping="//@ownedViewpoints[name='Sel_viewpoint']/@ownedRepresentations[name='Program']/@defaultLayer/@nodeMappings[name='GetLink']">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+      </defaultLayer>
+    </ownedRepresentations>
+  </ownedViewpoints>
+</description:Group>

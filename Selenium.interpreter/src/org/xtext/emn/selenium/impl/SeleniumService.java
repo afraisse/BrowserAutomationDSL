@@ -2,6 +2,7 @@ package org.xtext.emn.selenium.impl;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -37,7 +38,16 @@ public class SeleniumService implements ISeleniumService {
 			throw new RuntimeException("unknown browser : " + browserName);
 	}
 
-
+	
+	/* (non-Javadoc)
+	 * @see org.xtext.emn.selenium.interpreter.ISeleniumService#closeDriver()
+	 */
+	@Override
+	public void closeDriver() {
+		driver.close();
+	}
+	
+	
 	/* (non-Javadoc)
 	 * @see org.xtext.emn.selenium.interpreter.ISeleniumService#gotoLink(java.lang.String)
 	 */
@@ -80,9 +90,8 @@ public class SeleniumService implements ISeleniumService {
 	 */
 	@Override
 	public boolean isChecked(WebElement e) {
-		//TODO TEST
-		System.out.println("isChecked: " +e.getAttribute("checked"));
-		return e.getAttribute("checked").equalsIgnoreCase("true");
+		System.out.println("isChecked: " +e.isSelected());
+		return e.isSelected();
 	}
 
 	/* (non-Javadoc)
@@ -91,8 +100,8 @@ public class SeleniumService implements ISeleniumService {
 	@Override
 	public boolean isEnabled(WebElement e) {
 		//TODO TEST
-		System.out.println("isEnabled: " +e.getAttribute("isEnabled"));
-		return e.getAttribute("disabled").equalsIgnoreCase("false");
+		System.out.println("isEnabled: " +e.isEnabled());
+		return e.isEnabled();
 	}
 
 	/* (non-Javadoc)
@@ -100,9 +109,7 @@ public class SeleniumService implements ISeleniumService {
 	 */
 	@Override
 	public boolean exists(WebElement e) {
-		//TODO Change 
-		
-		return true; //TODO
+		return true; //TODO Quid ? Si webElement, forcément ?
 	}
 
 	/* (non-Javadoc)
@@ -126,7 +133,11 @@ public class SeleniumService implements ISeleniumService {
 	 */
 	@Override
 	public WebElement getButton(String id) {
-		return null; //TODO
+		WebElement e = driver.findElement(By.id(id));
+		if("button".equalsIgnoreCase(e.getTagName()))
+			return e; //TODO
+		else
+			return null;
 	}
 
 	/* (non-Javadoc)
@@ -134,7 +145,11 @@ public class SeleniumService implements ISeleniumService {
 	 */
 	@Override
 	public WebElement getLink(String id) {
-		return null; //TODO
+		WebElement e = driver.findElement(By.id(id));
+		if("a".equalsIgnoreCase(e.getTagName()))
+			return e; //TODO
+		else
+			return null;
 	}
 
 	/* (non-Javadoc)
@@ -142,7 +157,15 @@ public class SeleniumService implements ISeleniumService {
 	 */
 	@Override
 	public WebElement getCheckbox(String id) {
-		return null; //TODO
+		WebElement e = driver.findElement(By.id(id));
+		System.out.println(e.getTagName() + " " + e.getAttribute("name") + " " + e.getAttribute("id"));
+		if(e == null)
+			e = driver.findElement(By.name(id));
+		
+		if("input".equalsIgnoreCase(e.getTagName()))
+			return e; //TODO
+		else
+			return null;
 	}
 
 	/* (non-Javadoc)
@@ -150,7 +173,8 @@ public class SeleniumService implements ISeleniumService {
 	 */
 	@Override
 	public String getText(String id) {
-		return null; //TODO
+		WebElement e = driver.findElement(By.id(id));
+		return e.getText();
 	}
 
 	/* (non-Javadoc)
@@ -158,7 +182,11 @@ public class SeleniumService implements ISeleniumService {
 	 */
 	@Override
 	public WebElement getInput(String id) {
-		return null; //TODO
+		WebElement e = driver.findElement(By.id(id));
+		if(e.getTagName().equals("input"))
+			return e;
+		else
+			return null;
 	}
 
 	/* (non-Javadoc)
