@@ -8,11 +8,13 @@ public interface ISeleniumService {
 
 	void setDriver(String browserName);
 
-	void gotoLink(String url);
+	void gotoLink(WebElement link);
 
 	void fillInput(WebElement e, String str);
 
 	void clickButton(WebElement e);
+	
+	void tickCheckbox(WebElement e);
 
 	boolean isChecked(WebElement e);
 

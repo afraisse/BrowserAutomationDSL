@@ -9,6 +9,7 @@ import org.xtext.emn.selenium.ISeleniumService;
 import org.xtext.emn.selenium.impl.SeleniumServiceStub;
 import org.xtext.emn.selenium.sel.Affectation;
 import org.xtext.emn.selenium.sel.Check;
+import org.xtext.emn.selenium.sel.Click;
 import org.xtext.emn.selenium.sel.Exec;
 import org.xtext.emn.selenium.sel.Expression;
 import org.xtext.emn.selenium.sel.Fill;
@@ -24,8 +25,6 @@ import org.xtext.emn.selenium.sel.Test;
 import org.xtext.emn.selenium.sel.Value;
 import org.xtext.emn.selenium.sel.Variable;
 import org.xtext.emn.selenium.sel.Verify;
-
-import com.thoughtworks.selenium.webdriven.commands.Click;
 
 public class Interpreter {
 
@@ -100,17 +99,22 @@ public class Interpreter {
 			WebElement field = this.evaluateExpression((Expression) fill.getField());
 			this.service.fillInput(field, (String) this.evaluateValue(value));
 		} else if (instr instanceof Check) {
-
+			Check check = (Check) instr;
+			
+			WebElement checkbox = this.evaluateExpression((Expression) check.getCheckbox());
+			this.service.tickCheckbox(checkbox);
 		} else if (instr instanceof Click) {
-
+			Click click = (Click) instr;
+			
+			WebElement button = this.evaluateExpression((Expression) click.getButton());
+			this.service.clickButton(button);
 		} else if (instr instanceof Verify) {
 
 		} else if (instr instanceof GoTo) {
 			GoTo goTo = (GoTo) instr;
-			if (goTo.getLink() instanceof Variable) {
-				// Todo service call
-			}
-
+			
+			WebElement link = this.evaluateExpression((Expression) goTo.getLink());
+			this.service.gotoLink(link);
 		} else {
 			System.err.println("Unrecognized instruction : " + instr.toString());
 		}

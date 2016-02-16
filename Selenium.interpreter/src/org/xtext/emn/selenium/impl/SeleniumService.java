@@ -42,8 +42,8 @@ public class SeleniumService implements ISeleniumService {
 	 * @see org.xtext.emn.selenium.interpreter.ISeleniumService#gotoLink(java.lang.String)
 	 */
 	@Override
-	public void gotoLink(String url) {
-		driver.get(url);
+	public void gotoLink(WebElement link) {
+		driver.get(link.getText());
 	}
 
 
@@ -191,6 +191,13 @@ public class SeleniumService implements ISeleniumService {
 	@Override
 	public List<WebElement> getInputs(String id) {
 		return null; //TODO
+	}
+
+
+	@Override
+	public void tickCheckbox(WebElement e) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

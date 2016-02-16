@@ -125,8 +125,8 @@ public class SeleniumServiceStub implements ISeleniumService {
 	}
 
 	@Override
-	public void gotoLink(String url) {
-		System.out.println("gotolink : " + url);
+	public void gotoLink(WebElement link) {
+		System.out.println("gotolink : " + link.getText());
 	}
 
 	@Override
@@ -223,6 +223,12 @@ public class SeleniumServiceStub implements ISeleniumService {
 	public List<WebElement> getInputs(String id) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public void tickCheckbox(WebElement e) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

@@ -47,6 +47,8 @@ public class InterpreterAction implements IWorkbenchWindowActionDelegate {
 					new Interpreter().run(program);
 				}
 				
+				state.getAllContents();
+				
 				return null;
 			}
 			
