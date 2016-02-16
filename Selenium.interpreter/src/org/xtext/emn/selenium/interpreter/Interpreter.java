@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 import org.openqa.selenium.WebElement;
 import org.xtext.emn.selenium.ISeleniumService;
 import org.xtext.emn.selenium.impl.SeleniumServiceStub;
@@ -143,8 +144,8 @@ public class Interpreter {
 			return this.service.getInput((String) this.evaluateValue(value));
 		} else if (expr instanceof Variable) {
 			Variable var = (Variable) expr;
-			// Retrieve the var context
-			return (WebElement) this.env.get(((Sequence) var.eContainer()).getName()).get(var.getName()); 	
+
+			return (WebElement) getVariable(var); 	
 		} else {
 			System.err.println("Unrecognized expression : " + expr.toString());
 			return null;
@@ -158,10 +159,21 @@ public class Interpreter {
 	 * @return the evaluated value
 	 */
 	private Object evaluateValue(Value value) {
-		if (value.getVar() == null)
+		Variable var = value.getVar();
+		if (var == null)
 			return value.getStr();
-		else
-			return this.env.get(((Sequence) value.eContainer()).getName()).get(value.getVar().getName());
+		else {
+			return getVariable(var);
+		}
+
+	}
+
+	private Object getVariable(Variable var) {
+		// Context retrieve
+		EObject parent = var.eContainer();
+		while (!(parent instanceof Sequence))
+			parent = parent.eContainer();
+		return this.env.get(((Sequence) parent).getName()).get(var.getName());
 	}
 
 }

@@ -1,5 +1,6 @@
 package org.xtext.emn.selenium.impl;
 
+import java.lang.reflect.Field;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -54,7 +55,7 @@ public class SeleniumServiceStub implements ISeleniumService {
 		@Override
 		public String getText() {
 			// TODO Auto-generated method stub
-			return null;
+			return "element";
 		}
 		
 		@Override
@@ -227,6 +228,12 @@ public class SeleniumServiceStub implements ISeleniumService {
 
 	@Override
 	public void tickCheckbox(WebElement e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void closeDriver() {
 		// TODO Auto-generated method stub
 		
 	}

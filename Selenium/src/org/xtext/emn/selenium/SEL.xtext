@@ -73,19 +73,19 @@ Exec:
 ;
 
 Fill:
-    'Fill' field=(GetInput|[Variable]) 'with' value=Value
+    'Fill' field=(GetInput|Variable) 'with' value=Value
 ;
 
 Check:
-    'Check' checkbox=(GetCheckbox|[Variable]) 
+    'Check' checkbox=(GetCheckbox|Variable) 
 ;
 
 Click:
-    'Click' button=(GetButton|[Variable])
+    'Click' button=(GetButton|Variable)
 ;
 
 GoTo:
-    'GoTo' link=(GetLink|[Variable])    
+    'GoTo' link=(GetLink|Variable)    
 ;
 
 Verify:
@@ -124,7 +124,7 @@ enum UnaryOp:
 
 // Quelque chose qui peut retourner une valeur
 Expression:
-	GetButton | GetLink | GetCheckbox | GetText | GetInput | Value
+	GetButton | GetLink | GetCheckbox | GetText | GetInput | Variable
 ;
 
 
