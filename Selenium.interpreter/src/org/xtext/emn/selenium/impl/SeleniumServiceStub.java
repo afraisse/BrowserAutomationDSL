@@ -145,7 +145,7 @@ public class SeleniumServiceStub implements ISeleniumService {
 	@Override
 	public boolean isChecked(WebElement e) {
 		System.out.println("isChecked : " + e.getText());
-		return false;
+		return true;
 	}
 
 	@Override
@@ -157,13 +157,13 @@ public class SeleniumServiceStub implements ISeleniumService {
 	@Override
 	public boolean exists(WebElement e) {
 		System.out.println("exists: " + e.getText());
-		return false;
+		return true;
 	}
 
 	@Override
 	public boolean contains(WebElement e, String s) {
 		System.out.println("contains : " + s);
-		return false;
+		return true;
 	}
 
 	@Override

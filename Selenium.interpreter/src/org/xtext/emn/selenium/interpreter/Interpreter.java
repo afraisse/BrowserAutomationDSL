@@ -9,8 +9,10 @@ import org.openqa.selenium.WebElement;
 import org.xtext.emn.selenium.ISeleniumService;
 import org.xtext.emn.selenium.impl.SeleniumServiceStub;
 import org.xtext.emn.selenium.sel.Affectation;
+import org.xtext.emn.selenium.sel.BinaryCondition;
 import org.xtext.emn.selenium.sel.Check;
 import org.xtext.emn.selenium.sel.Click;
+import org.xtext.emn.selenium.sel.Condition;
 import org.xtext.emn.selenium.sel.Exec;
 import org.xtext.emn.selenium.sel.Expression;
 import org.xtext.emn.selenium.sel.Fill;
@@ -20,9 +22,11 @@ import org.xtext.emn.selenium.sel.GetInput;
 import org.xtext.emn.selenium.sel.GetLink;
 import org.xtext.emn.selenium.sel.GoTo;
 import org.xtext.emn.selenium.sel.Instruction;
+import org.xtext.emn.selenium.sel.NotCondition;
 import org.xtext.emn.selenium.sel.Program;
 import org.xtext.emn.selenium.sel.Sequence;
 import org.xtext.emn.selenium.sel.Test;
+import org.xtext.emn.selenium.sel.UnaryCondition;
 import org.xtext.emn.selenium.sel.Value;
 import org.xtext.emn.selenium.sel.Variable;
 import org.xtext.emn.selenium.sel.Verify;
@@ -110,13 +114,18 @@ public class Interpreter {
 			
 			WebElement button = this.evaluateExpression((Expression) click.getButton());
 			this.service.clickButton(button);
-		} else if (instr instanceof Verify) {
-
 		} else if (instr instanceof GoTo) {
 			GoTo goTo = (GoTo) instr;
 			
 			WebElement link = this.evaluateExpression((Expression) goTo.getLink());
 			this.service.gotoLink(link);
+		} else if (instr instanceof Verify) {
+			Verify verify = (Verify) instr;
+			if (this.evaluateCondition(verify.getCondition())) {
+				System.out.println("Verified : " + verify.getLabel());
+			} else {
+				System.err.println("Invalid : " + verify.getLabel());
+			}
 		} else {
 			System.err.println("Unrecognized instruction : " + instr.toString());
 		}
@@ -167,6 +176,45 @@ public class Interpreter {
 			return getVariable(var);
 		}
 
+	}
+	
+	/**
+	 * Evaluate the given condition
+	 * 
+	 * @param cond a Condition
+	 * @return <code>true</code> if the condition is met, <false> if it is not
+	 */
+	private boolean evaluateCondition(Condition cond) {
+		if (cond instanceof UnaryCondition) {
+			UnaryCondition unaryCond = (UnaryCondition) cond;
+			switch (unaryCond.getOp()) {
+			case EXISTS :
+				return this.service.exists(this.evaluateExpression(unaryCond.getElem()));
+			case IS_CHECKED :
+				return this.service.isChecked(this.evaluateExpression(unaryCond.getElem()));
+			case IS_ENABLED :
+				return this.service.isEnabled(this.evaluateExpression(unaryCond.getElem()));
+			default :
+				return false;
+			}
+		} else if (cond instanceof BinaryCondition) {
+			BinaryCondition binaryCond = (BinaryCondition) cond;
+			switch (binaryCond.getOp()) {
+			case CONTAINS : 
+				return this.service.contains(this.evaluateExpression(binaryCond.getElem()), (String) this.evaluateValue(binaryCond.getValue()));
+			case EQUALS :
+				return this.service.equals(this.evaluateExpression(binaryCond.getElem()), (String) this.evaluateValue(binaryCond.getValue()));
+			default :
+				return false;
+			}
+		} else if (cond instanceof NotCondition) {
+			Condition notCond = ((NotCondition) cond).getCondition();
+			return !this.evaluateCondition(notCond);
+		} else {
+			System.err.println("Unrecognized condition : " + cond.toString());
+			return false;
+		}
+		
 	}
 
 	private Object getVariable(Variable var) {

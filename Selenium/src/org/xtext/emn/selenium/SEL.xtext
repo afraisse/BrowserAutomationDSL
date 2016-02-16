@@ -89,7 +89,7 @@ GoTo:
 ;
 
 Verify:
-    'Verify' condition=Condition
+    'Verify' condition=Condition 'as' label=STRING
 ;
 
 // CONDITIONS
