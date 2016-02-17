@@ -11,6 +11,8 @@ public interface ISeleniumService {
 	void closeDriver();
 
 	void gotoLink(WebElement link);
+	
+	void gotoLink(String link);
 
 	void fillInput(WebElement e, String str);
 

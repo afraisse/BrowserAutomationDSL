@@ -238,4 +238,10 @@ public class SeleniumServiceStub implements ISeleniumService {
 		
 	}
 
+	@Override
+	public void gotoLink(String link) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
