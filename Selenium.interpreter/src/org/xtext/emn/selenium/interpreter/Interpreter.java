@@ -60,6 +60,7 @@ public class Interpreter {
 		for (Exec e : body) {
 			execute(e);
 		}
+		service.closeDriver();
 	}
 
 	private void execute(Instruction instr) {
