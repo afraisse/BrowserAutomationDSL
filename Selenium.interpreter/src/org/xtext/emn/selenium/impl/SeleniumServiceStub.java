@@ -1,6 +1,5 @@
 package org.xtext.emn.selenium.impl;
 
-import java.lang.reflect.Field;
 import java.util.List;
 
 import org.openqa.selenium.By;

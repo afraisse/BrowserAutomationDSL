@@ -21,6 +21,7 @@ import org.xtext.emn.selenium.sel.GetCheckbox;
 import org.xtext.emn.selenium.sel.GetInput;
 import org.xtext.emn.selenium.sel.GetLink;
 import org.xtext.emn.selenium.sel.GoTo;
+import org.xtext.emn.selenium.sel.IfThenElse;
 import org.xtext.emn.selenium.sel.Instruction;
 import org.xtext.emn.selenium.sel.NotCondition;
 import org.xtext.emn.selenium.sel.Program;
@@ -98,6 +99,17 @@ public class Interpreter {
 			// Roll out the sequence
 			for (Instruction seqInstr : seq.getBody()) {
 				this.execute(seqInstr);
+			}
+		} else if (instr instanceof IfThenElse) {
+			IfThenElse ifThenElse = (IfThenElse) instr;
+			
+			Condition condition = ifThenElse.getCondition();
+			if (this.evaluateCondition(condition)) {
+				for (Instruction i : ifThenElse.getThen()) 
+					this.execute(i);
+			} else {
+				for (Instruction i : ifThenElse.getElse()) 
+					this.execute(i);
 			}
 		} else if (instr instanceof Fill) {
 			Fill fill = (Fill) instr;
