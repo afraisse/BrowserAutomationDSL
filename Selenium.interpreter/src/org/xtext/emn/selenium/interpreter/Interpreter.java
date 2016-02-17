@@ -117,8 +117,11 @@ public class Interpreter {
 		} else if (instr instanceof GoTo) {
 			GoTo goTo = (GoTo) instr;
 			
-			WebElement link = this.evaluateExpression((Expression) goTo.getLink());
-			this.service.gotoLink(link);
+			if (goTo.getLink() != null) {				
+				WebElement link = this.evaluateExpression((Expression) goTo.getLink());
+				this.service.gotoLink(link);
+			} else if (goTo.getUrl() != null) 
+				this.service.gotoLink(goTo.getUrl());
 		} else if (instr instanceof Verify) {
 			Verify verify = (Verify) instr;
 			if (this.evaluateCondition(verify.getCondition())) {

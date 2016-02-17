@@ -85,7 +85,7 @@ Click:
 ;
 
 GoTo:
-    'GoTo' link=(GetLink|Variable)    
+    'GoTo' (link=(GetLink|Variable) | url=STRING)    
 ;
 
 Verify:

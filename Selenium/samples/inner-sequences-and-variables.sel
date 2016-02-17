@@ -2,7 +2,7 @@ Sequence goToCampus {
 	Sequence goToLink(link) {
 		GoTo link
 	}
-	site = GetLink "http://campus.mines-nantes.fr"
+	site = "http://theo.fr"
 	Exec goToLink(site)
 	connexion = GetLink "connexion"
 	czam = GetButton "Cliquez ici ou sur le logo C'zam pour vous identifier"
