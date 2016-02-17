@@ -1,5 +1,6 @@
 package org.xtext.emn.selenium.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -203,26 +204,34 @@ public class SeleniumServiceStub implements ISeleniumService {
 
 	@Override
 	public List<WebElement> getButtons(String id) {
-		// TODO Auto-generated method stub
-		return null;
+		List<WebElement> list = new ArrayList<WebElement>();
+		list.add(this.stub);
+		list.add(this.stub);
+		return list;
 	}
 
 	@Override
 	public List<WebElement> getLinks(String id) {
-		// TODO Auto-generated method stub
-		return null;
+		List<WebElement> list = new ArrayList<WebElement>();
+		list.add(this.stub);
+		list.add(this.stub);
+		return list;
 	}
 
 	@Override
 	public List<WebElement> getCheckboxes(String id) {
-		// TODO Auto-generated method stub
-		return null;
+		List<WebElement> list = new ArrayList<WebElement>();
+		list.add(this.stub);
+		list.add(this.stub);
+		return list;
 	}
 
 	@Override
 	public List<WebElement> getInputs(String id) {
-		// TODO Auto-generated method stub
-		return null;
+		List<WebElement> list = new ArrayList<WebElement>();
+		list.add(this.stub);
+		list.add(this.stub);
+		return list;
 	}
 
 	@Override
