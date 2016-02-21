@@ -1,5 +1,5 @@
 Sequence connexion {
-	GoTo "https://campusneo.mines-nantes.fr/campus/login/index.php"
+	GoTo GetLink "https://campusneo.mines-nantes.fr/campus/login/index.php"
 	Fill GetInput "username" with "mtisi08"
 	Fill GetInput "password" with "12345"
 	Check GetCheckbox "warn"

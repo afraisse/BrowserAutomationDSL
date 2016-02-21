@@ -1,6 +1,7 @@
 package org.xtext.emn.selenium.interpreter;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.EList;
@@ -16,11 +17,16 @@ import org.xtext.emn.selenium.sel.Condition;
 import org.xtext.emn.selenium.sel.Exec;
 import org.xtext.emn.selenium.sel.Expression;
 import org.xtext.emn.selenium.sel.Fill;
+import org.xtext.emn.selenium.sel.ForAll;
 import org.xtext.emn.selenium.sel.GetButton;
+import org.xtext.emn.selenium.sel.GetButtons;
 import org.xtext.emn.selenium.sel.GetCheckbox;
+import org.xtext.emn.selenium.sel.GetCheckboxes;
 import org.xtext.emn.selenium.sel.GetInput;
 import org.xtext.emn.selenium.sel.GetLink;
+import org.xtext.emn.selenium.sel.GetLinks;
 import org.xtext.emn.selenium.sel.GoTo;
+import org.xtext.emn.selenium.sel.IfThenElse;
 import org.xtext.emn.selenium.sel.Instruction;
 import org.xtext.emn.selenium.sel.NotCondition;
 import org.xtext.emn.selenium.sel.Program;
@@ -38,6 +44,10 @@ public class Interpreter {
 
 	private ISeleniumService service = new SeleniumServiceStub();
 
+	/**
+	 * Runs the main program
+	 * @param program the program, composed of Sequence declaration and Test executions
+	 */
 	public void run(Program program) {
 		EList<Test> tests = program.getTests();
 
@@ -52,6 +62,10 @@ public class Interpreter {
 		}
 	}
 
+	/**
+	 * Run a test 
+	 * @param t the Test to run
+	 */
 	private void test(Test t) {
 		// Each test happens in a specific browser
 		service.setDriver(t.getBrowser());
@@ -60,8 +74,15 @@ public class Interpreter {
 		for (Exec e : body) {
 			execute(e);
 		}
+		service.closeDriver();
 	}
 
+	/**
+	 * Execute the given instruction
+	 * 
+	 * @param instr the instruction to execute; can be of type :
+	 * 	Sequence | ForAll | DoWhile | IfThenElse | Affectation | Exec | Fill | Check | Click | Verify | GoTo
+	 */
 	private void execute(Instruction instr) {
 		if (instr instanceof Sequence) {
 			// Store the seq for further execution
@@ -70,12 +91,14 @@ public class Interpreter {
 		} else if (instr instanceof Affectation) {
 			Affectation aff = (Affectation) instr;
 			// Retrieve affectation environment - which is always a Sequence
-			Sequence parent = (Sequence) aff.eContainer();
+			EObject parent = aff.eContainer();
+			while (!(parent instanceof Sequence))
+				parent = parent.eContainer();
 			// We evaluate the expression stored in the variable
 			if (aff.getValue() instanceof Value) {
-				env.get(parent.getName()).put(aff.getVariable().getName(), evaluateValue((Value) aff.getValue()));
+				env.get(((Sequence) parent).getName()).put(aff.getVariable().getName(), evaluateValue((Value) aff.getValue()));
 			} else {
-				env.get(parent.getName()).put(aff.getVariable().getName(), evaluateExpression(aff.getValue()));
+				env.get(((Sequence) parent).getName()).put(aff.getVariable().getName(), evaluateExpression(aff.getValue()));
 			}
 		} else if (instr instanceof Exec) {
 			Exec exec = (Exec) instr;
@@ -98,6 +121,40 @@ public class Interpreter {
 			for (Instruction seqInstr : seq.getBody()) {
 				this.execute(seqInstr);
 			}
+		} else if (instr instanceof IfThenElse) {
+			IfThenElse ifThenElse = (IfThenElse) instr;
+			
+			Condition condition = ifThenElse.getCondition();
+			if (this.evaluateCondition(condition)) {
+				for (Instruction i : ifThenElse.getThen()) 
+					this.execute(i);
+			} else {
+				for (Instruction i : ifThenElse.getElse()) 
+					this.execute(i);
+			}
+		} else if (instr instanceof ForAll) {
+			ForAll forall = (ForAll) instr;
+			
+			Value value = forall.getElems().getValue();
+			String id = value == null ? "" : (String) this.evaluateValue(value);
+			
+			List<WebElement> elems = null;
+			if (forall.getElems() instanceof GetButtons) {
+				 elems = this.service.getButtons(id);
+			} else if (forall.getElems() instanceof GetCheckboxes) {
+				elems = this.service.getCheckboxes(id);
+			} else if (forall.getElems() instanceof GetLinks) {
+				elems = this.service.getLinks(id);
+			}
+			
+			// We create a variable in the Sequence environment. This also means that any variable
+			// created in the ForAll will be in the scope of the containing sequence
+			for (WebElement e : elems) {
+				env.get(((Sequence) forall.eContainer()).getName())
+					.put(forall.getIt().getName(), e);
+				forall.getBody().forEach(i -> this.execute(i));
+			}
+			
 		} else if (instr instanceof Fill) {
 			Fill fill = (Fill) instr;
 			Value value = fill.getValue();
@@ -220,6 +277,12 @@ public class Interpreter {
 		
 	}
 
+	/**
+	 * Retrieve the value of a Variable in the environment Map
+	 * 
+	 * @param var the Variable to fetch
+	 * @return the value associated to the variable in the environment map
+	 */
 	private Object getVariable(Variable var) {
 		// Context retrieve
 		EObject parent = var.eContainer();
