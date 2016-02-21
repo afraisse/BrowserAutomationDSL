@@ -216,12 +216,12 @@ public class SeleniumService implements ISeleniumService {
 
 	//TODO
 	@Override
-	public String getText(String identifier) {
+	public WebElement getText(String identifier) {
 		log("trying to find text: '" + identifier + "'");
 		WebElement e = complexFind(identifier);
 		if(e != null) {
 			log(e.getText());
-			return e.getText(); //TODO change along with interpreter.
+			return e; //TODO change along with interpreter.
 		}
 		fail("ERROR: element '"+identifier+"' not found on this page.");
 		return null;
@@ -330,8 +330,11 @@ public class SeleniumService implements ISeleniumService {
 	public List<WebElement> getInputs(String id) {
 		return null; //TODO
 	}
-
-
+	
+	@Override
+	public List<WebElement> getTexts(String id) {
+		return null; //TODO
+	}
 
 
 

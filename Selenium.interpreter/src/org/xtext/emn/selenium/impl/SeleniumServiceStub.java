@@ -197,9 +197,9 @@ public class SeleniumServiceStub implements ISeleniumService {
 	}
 
 	@Override
-	public String getText(String id) {
+	public WebElement getText(String id) {
 		System.out.println("getText : "+id);
-		return "stub";
+		return this.stub;
 	}
 
 	@Override
@@ -256,6 +256,11 @@ public class SeleniumServiceStub implements ISeleniumService {
 	public void gotoLink(String link) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	@Override
+	public List<WebElement> getTexts(String id) {
+		return null; //TODO
 	}
 
 }

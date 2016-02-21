@@ -38,7 +38,7 @@ public interface ISeleniumService {
 
 	WebElement getCheckbox(String id);
 
-	String getText(String id);
+	WebElement getText(String id);
 
 	WebElement getInput(String id);
 
@@ -47,6 +47,8 @@ public interface ISeleniumService {
 	List<WebElement> getLinks(String id);
 
 	List<WebElement> getCheckboxes(String id);
+	
+	List<WebElement> getTexts(String id);
 
 	List<WebElement> getInputs(String id);
 
