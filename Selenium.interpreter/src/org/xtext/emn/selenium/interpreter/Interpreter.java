@@ -73,8 +73,13 @@ public class Interpreter {
 		service.setDriver(t.getBrowser());
 
 		EList<Exec> body = t.getBody();
-		for (Exec e : body) {
-			execute(e);
+		try {
+			for (Exec e : body) {
+				execute(e);
+			}
+		} catch (NullPointerException e) {
+			// If a NPE is thrown, then something is wrong with the test
+			System.err.println("Closing test up");
 		}
 		service.closeDriver();
 	}
