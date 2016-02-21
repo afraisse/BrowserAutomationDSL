@@ -8,7 +8,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.openqa.selenium.WebElement;
 import org.xtext.emn.selenium.ISeleniumService;
-import org.xtext.emn.selenium.impl.SeleniumServiceStub;
+import org.xtext.emn.selenium.impl.SeleniumService;
 import org.xtext.emn.selenium.sel.Affectation;
 import org.xtext.emn.selenium.sel.BinaryCondition;
 import org.xtext.emn.selenium.sel.Check;
@@ -42,7 +42,8 @@ public class Interpreter {
 	Map<String, Sequence> seqs = new HashMap<>();
 	Map<String, Map<String, Object>> env = new HashMap<>();
 
-	private ISeleniumService service = new SeleniumServiceStub();
+	//private ISeleniumService service = new SeleniumServiceStub();
+	private ISeleniumService service = SeleniumService.getInstance();
 
 	/**
 	 * Runs the main program

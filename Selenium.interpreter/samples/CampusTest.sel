@@ -1,0 +1,67 @@
+Sequence connexion {
+	
+	
+	GoTo "https://campusneo.mines-nantes.fr/campus/course/view.php?id=1571"
+	GoTo GetLink "Connexion"
+	Click GetButton "Cliquez ici ou sur le logo C'zam pour vous identifier"
+	
+	GoTo GetLink "javascript:valider('4')"
+	Click GetButton "Cliquez ici pour continuer"
+	Verify Exists GetButton "Sauvegarder et accéder à la ressource" as "Save and go button exist"
+	Click GetButton "Sauvegarder et accéder à la ressource"
+	
+	userInput = GetInput "username"
+	pwdInput = GetInput "password"
+	
+	
+	Fill userInput with "mtisi08"
+	Fill pwdInput with "12345"
+	Verify IsEnabled GetInput "username" as "Username field is enabled."
+	Verify Not IsChecked GetCheckbox "warn" as "Checkbox is checked"
+	Check GetCheckbox "warn"
+	Verify IsChecked GetCheckbox "warn" as "Checkbox is checked"
+	Click GetButton "Connexion"
+
+
+	Verify GetLink "Consulter le profil" Contains "Théophile MORIN" as "Profile is set"
+	Verify GetLink "Déconnexion" Equals "Déconnexion" as "Disconnect button label"
+	Verify Not Exists GetButton "Connexion" as "No connect button"
+}
+
+Sequence disconnexion {
+	
+	/*Sequence uselessInnerSequence(link) {
+		GoTo link
+	}
+	Exec uselessInnerSequence("https://campusneo.mines-nantes.fr/campus/course/view.php?id=1571")*/  //TODO PLANTE
+	/*
+	 * java.lang.String cannot be cast to org.openqa.selenium.WebElement
+	 * at org.xtext.emn.selenium.interpreter.Interpreter.evaluateExpression(Interpreter.java:224)
+	 * at org.xtext.emn.selenium.interpreter.Interpreter.execute(Interpreter.java:184)
+	 * même stack trace pour les deux
+	 */
+	
+	GoTo "https://campusneo.mines-nantes.fr/campus/course/view.php?id=1571"
+	
+	connexionButton = GetButton "Connexion"
+	disconnectLink = GetLink "Déconnexion"
+	
+	Verify Not Exists connexionButton as "No connect button again"
+	Verify Not Exists GetButton "Connexion" as "No connect button again"
+	GoTo disconnectLink
+	
+	
+	Verify Exists GetLink "Connexion" as "Connexion button available"
+	If Exists GetLink "Connexion" {
+		Verify Exists GetLink "Connexion" as "Connexion button available checked in a IF condition"
+	}Else { 
+		Verify Exists GetLink "Connexion" as "Connexion button available checked in a ELSE condition"
+	}
+	Verify GetText ".logininfo" Contains "Non connecté" as "Login info div assert no current connexion"	
+}
+
+
+Test "firefox" {
+	Exec connexion
+	Exec disconnexion
+}
