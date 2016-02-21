@@ -4,8 +4,10 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
+import java.util.stream.Collectors;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
@@ -28,7 +30,7 @@ public class SeleniumService implements ISeleniumService {
 
 	//Singleton pattern
 	private SeleniumService(){
-		
+
 	}
 	private static class SeleniumServiceHandler {
 		private final static ISeleniumService instance = new SeleniumService();
@@ -247,13 +249,12 @@ public class SeleniumService implements ISeleniumService {
 		return null;
 	}
 
-	//TODO
+	
 	@Override
 	public WebElement getText(String identifier) {
 		log("trying to find text: '" + identifier + "'");
 		WebElement e = complexFind(identifier);
 		if(e != null) {
-			log(e.getText());
 			return e;
 		}
 		fail("ERROR: element '"+identifier+"' not found on this page.");
@@ -344,37 +345,96 @@ public class SeleniumService implements ISeleniumService {
 
 	@Override
 	public List<WebElement> getButtons(String identifier) {
-		List<WebElement> elems = null;
-		elems = driver.findElements(By.name(identifier));
-		if(elems.size()==0)
-			driver.findElements(By.name(identifier));
+		List<WebElement> elems;
+		List<WebElement> list = new ArrayList<WebElement>();
+		try {
+			elems = driver.findElements(By.name(identifier));
+			elems.addAll(driver.findElements(By.cssSelector(identifier)));
+			elems.addAll(driver.findElements(By.partialLinkText(identifier)));
+			elems.addAll(driver.findElements(By.xpath(identifier)));
+			list = elems.stream()
+					.filter(e -> (e.getTagName() == "button" || e.getTagName() == "input"))
+					.collect(Collectors.toList());
+		}catch(Exception e) {
+			fail("ERROR: no buttons matching '"+identifier+"' found on this page.");
+		}
 
-
-
-		return null;
+		return list;
 	}
 
 
 	@Override
-	public List<WebElement> getLinks(String id) {
-		return null; //TODO
+	public List<WebElement> getLinks(String identifier) {
+		List<WebElement> elems;
+		List<WebElement> list = new ArrayList<WebElement>();
+		try {
+			elems = driver.findElements(By.name(identifier));
+			elems.addAll(driver.findElements(By.cssSelector(identifier)));
+			elems.addAll(driver.findElements(By.partialLinkText(identifier)));
+			elems.addAll(driver.findElements(By.xpath(identifier)));
+			list = elems.stream()
+					.filter(e -> (e.getTagName() == "a" || e.getTagName() == "area"))
+					.collect(Collectors.toList());
+		}catch(Exception e) {
+			fail("ERROR: no links matching '"+identifier+"' found on this page.");
+		}
+
+		return list;
 	}
 
 
 	@Override
-	public List<WebElement> getCheckboxes(String id) {
-		return null; //TODO
+	public List<WebElement> getCheckboxes(String identifier) {
+		List<WebElement> elems;
+		List<WebElement> list = new ArrayList<WebElement>();
+		try {
+			elems = driver.findElements(By.name(identifier));
+			elems.addAll(driver.findElements(By.cssSelector(identifier)));
+			elems.addAll(driver.findElements(By.partialLinkText(identifier)));
+			elems.addAll(driver.findElements(By.xpath(identifier)));
+			list = elems.stream()
+					.filter(e -> (e.getTagName() == "input"))
+					.collect(Collectors.toList());
+		}catch(Exception e) {
+			fail("ERROR: no checkboxes matching '"+identifier+"' found on this page.");
+		}
+
+		return list;
 	}
 
 
 	@Override
-	public List<WebElement> getInputs(String id) {
-		return null; //TODO
+	public List<WebElement> getInputs(String identifier) {
+		List<WebElement> elems;
+		List<WebElement> list = new ArrayList<WebElement>();
+		try {
+			elems = driver.findElements(By.name(identifier));
+			elems.addAll(driver.findElements(By.cssSelector(identifier)));
+			elems.addAll(driver.findElements(By.partialLinkText(identifier)));
+			elems.addAll(driver.findElements(By.xpath(identifier)));
+			list = elems.stream()
+					.filter(e -> (e.getTagName() == "input"))
+					.collect(Collectors.toList());
+		}catch(Exception e) {
+			fail("ERROR: no inputs matching '"+identifier+"' found on this page.");
+		}
+
+		return list;
 	}
 
 	@Override
-	public List<WebElement> getTexts(String id) {
-		return null; //TODO
+	public List<WebElement> getTexts(String identifier) {
+		List<WebElement> elems = new ArrayList<WebElement>();
+		try {
+			elems = driver.findElements(By.name(identifier));
+			elems.addAll(driver.findElements(By.cssSelector(identifier)));
+			elems.addAll(driver.findElements(By.partialLinkText(identifier)));
+			elems.addAll(driver.findElements(By.xpath(identifier)));
+			
+		}catch(Exception e) {
+			fail("ERROR: no texts matching '"+identifier+"' found on this page.");
+		}
+		return elems;
 	}
 
 
