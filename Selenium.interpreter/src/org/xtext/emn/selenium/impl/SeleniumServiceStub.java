@@ -126,12 +126,6 @@ public class SeleniumServiceStub implements ISeleniumService {
 	}
 	
 	@Override
-	public void setDriver(String browserName, String binaryPath) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
 	public void gotoLink(WebElement link) {
 		System.out.println("gotolink : " + link.getText());
 	}

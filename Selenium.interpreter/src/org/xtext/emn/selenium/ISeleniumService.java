@@ -8,8 +8,6 @@ public interface ISeleniumService {
 
 	void setDriver(String browserName);
 	
-	void setDriver(String browserName, String binaryPath);
-	
 	void closeDriver();
 
 	void gotoLink(WebElement link);

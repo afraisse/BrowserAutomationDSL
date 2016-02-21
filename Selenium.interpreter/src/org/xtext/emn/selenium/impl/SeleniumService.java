@@ -1,9 +1,16 @@
 package org.xtext.emn.selenium.impl;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.List;
 import java.util.Properties;
 
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IWorkspace;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -15,11 +22,14 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.safari.SafariDriver;
 import org.xtext.emn.selenium.ISeleniumService;
+import org.xtext.emn.selenium.interpreter.handlers.InterpreterAction;
 
 public class SeleniumService implements ISeleniumService {
 
 	//Singleton pattern
-	private SeleniumService(){}
+	private SeleniumService(){
+		
+	}
 	private static class SeleniumServiceHandler {
 		private final static ISeleniumService instance = new SeleniumService();
 	}
@@ -42,44 +52,62 @@ public class SeleniumService implements ISeleniumService {
 	/* TESTED */
 	@Override
 	public void setDriver(String browserName) {
-		//findProps();
-		setDriver(browserName, null);
+		retrieveProperties();
 		log("driver set to " + browserName);
-	}
-
-	/* TESTED */
-	@Override
-	public void setDriver(String browserName, String binaryPath) {
 		if("firefox".equalsIgnoreCase(browserName)) {
-			if(binaryPath != null) {
-				driver = new FirefoxDriver(new FirefoxBinary(new File(binaryPath)), new FirefoxProfile());
-			} else 
+			try {
 				driver = new FirefoxDriver();
+			}catch(Exception e) {
+				String binaryPath = System.getProperty("emn.selenium.config.firefox");
+				System.out.println("binpath: " +binaryPath);
+				System.setProperty("webdriver.firefox.driver", binaryPath);
+				driver = new FirefoxDriver(new FirefoxBinary(new File(binaryPath)), new FirefoxProfile());
+			}
 		} else if("chrome".equalsIgnoreCase(browserName)) {
-			if(binaryPath != null) 
-				System.setProperty("webdriver.chrome.driver", binaryPath);
-			else 
+			try {
 				driver = new ChromeDriver();
+			}catch(Exception e) {
+				String binaryPath = System.getProperty("emn.selenium.config.chrome");
+				System.out.println("binpath: " +binaryPath);
+				System.setProperty("webdriver.chrome.driver", binaryPath);
+				driver = new ChromeDriver();
+			}
 		} else if("safari".equalsIgnoreCase(browserName)) {
-			if(binaryPath != null) 
-				System.setProperty("webdriver.safari.driver", binaryPath);
-			else 
+			try {
 				driver = new SafariDriver();
+			}catch(Exception e) {
+				String binaryPath = System.getProperty("emn.selenium.config.safari");
+				System.out.println("binpath: " +binaryPath);
+				System.setProperty("webdriver.safari.driver", binaryPath);
+				driver = new SafariDriver();
+			}
 		}else if("ie".equalsIgnoreCase(browserName)) {
-			if(binaryPath != null) 
+			try {
+				driver = new EdgeDriver();
+			}catch(Exception e) {
+				String binaryPath = System.getProperty("emn.selenium.config.ie");
+				System.out.println(	"binpath: " +binaryPath);
 				System.setProperty("webdriver.edge.driver", binaryPath);
-			driver = new EdgeDriver();
+				driver = new EdgeDriver();
+				System.out.println(driver);
+			}
 		} else 
 			throw new RuntimeException("unknown browser : " + browserName);
 	}
 
-	private void findProps() {
-		System.out.println("coucou");
-		System.out.println(System.getProperty("java.class.path"));
-		Properties p = System.getProperties();
-		System.out.println(p.size());
-		for(Object k : p.keySet().toArray()) {
-			System.out.println(k);
+	/* TESTED */
+	private void retrieveProperties() {
+		Properties p = new Properties();
+		System.out.println("Parsing property file from: " + System.getProperty("emn.selenium.config"));
+		try {
+			p.load(new FileInputStream(System.getProperty("emn.selenium.config")));
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		for(Object key : p.keySet()) {
+			System.setProperty((String)key, (String)p.get(key));
 		}
 	}
 
@@ -113,18 +141,6 @@ public class SeleniumService implements ISeleniumService {
 	@Override
 	public void fillInput(WebElement e, String str) {
 		e.sendKeys(str);
-		/*String script="var array = document.getElementsByTagName('"+e.getTagName()+"'); "+
-				"for(var i=0; i< array.length; ++i) { "+
-				"if(array[i].getAttribute('innerHTML') == '"+e.getText()+"')"+
-				"{array[i].value='"+ str +"'}  }";
-
-		if(driver instanceof FirefoxDriver) {
-			((FirefoxDriver)driver).executeScript(script); 
-		} else if(driver instanceof ChromeDriver) {
-			((ChromeDriver)driver).executeScript(script); 
-		} else if(driver instanceof InternetExplorerDriver) {
-			((InternetExplorerDriver)driver).executeScript(script); 
-		}*/
 	}
 
 
