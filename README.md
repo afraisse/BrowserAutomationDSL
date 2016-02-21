@@ -15,3 +15,9 @@ Exemples can be found under the samples folder. Our DSL file extension is .SEL.
 - Run the interpreter using the plugin button "Execute the currently selected SEL script"
 
 Feedback will be print in the parent eclipse instance's console.
+
+## How to configure the webDrivers binary path
+
+- In the new Eclipse instance, along to test files (.sel), copy the config.properties file from the base instance of Eclipse (Selenium.Interpreter/samples).
+- In the config.properties, you can choose between 4 web browsers (chrome, firefox, ie and safari)
+- you can change the values of the keys (ex: *emn.selenium.config.chrome*) to the WebDriver binary path(*emn.selenium.config.chrome=C:/Program Files (x86)/Google/Chrome/driver/chromedriver.exe*).
