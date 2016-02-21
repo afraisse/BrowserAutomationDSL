@@ -3,9 +3,11 @@ package org.xtext.emn.selenium.impl;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.xtext.emn.selenium.ISeleniumService;
@@ -28,17 +30,31 @@ public class SeleniumService implements ISeleniumService {
 	 */
 	@Override
 	public void setDriver(String browserName) {
+		setDriver(browserName, null);
+	}
+
+	/* (non-Javadoc)
+	 * @see org.xtext.emn.selenium.interpreter.ISeleniumService#setDriver(java.lang.String)
+	 */
+	@Override
+	public void setDriver(String browserName, String binaryName) {
 		if("firefox".equalsIgnoreCase(browserName)) {
 			driver = new FirefoxDriver();
 		} else if("chrome".equalsIgnoreCase(browserName)) {
-			driver = new ChromeDriver();
+			if(binaryName != null) {
+				ChromeOptions options = new ChromeOptions();
+				options.setBinary(binaryName);
+				driver = new ChromeDriver(options);
+			} else {
+				driver = new ChromeDriver();
+			}
 		} else if("ie".equalsIgnoreCase(browserName)) {
 			driver = new InternetExplorerDriver();
 		} else 
 			throw new RuntimeException("unknown browser : " + browserName);
 	}
 
-	
+
 	/* (non-Javadoc)
 	 * @see org.xtext.emn.selenium.interpreter.ISeleniumService#closeDriver()
 	 */
@@ -46,14 +62,22 @@ public class SeleniumService implements ISeleniumService {
 	public void closeDriver() {
 		driver.close();
 	}
-	
-	
+
+
 	/* (non-Javadoc)
-	 * @see org.xtext.emn.selenium.interpreter.ISeleniumService#gotoLink(java.lang.String)
+	 * @see org.xtext.emn.selenium.interpreter.ISeleniumService#gotoLink(java.lang.WebElement)
 	 */
 	@Override
 	public void gotoLink(WebElement link) {
 		driver.get(link.getText());
+	}
+
+	/* (non-Javadoc)
+	 * @see org.xtext.emn.selenium.interpreter.ISeleniumService#gotoLink(java.lang.String)
+	 */
+	@Override
+	public void gotoLink(String link) {
+		driver.get(link);
 	}
 
 
@@ -67,7 +91,7 @@ public class SeleniumService implements ISeleniumService {
 				"for(var i=0; i< array.length; ++i) { "+
 				"if(array[i].getAttribute('innerHTML') == '"+e.getText()+"')"+
 				"{array[i].value='"+ str +"'}  }";
-		
+
 		if(driver instanceof FirefoxDriver) {
 			((FirefoxDriver)driver).executeScript(script); 
 		} else if(driver instanceof ChromeDriver) {
@@ -145,11 +169,15 @@ public class SeleniumService implements ISeleniumService {
 	 */
 	@Override
 	public WebElement getLink(String id) {
-		WebElement e = driver.findElement(By.id(id));
-		if("a".equalsIgnoreCase(e.getTagName()))
-			return e; //TODO
-		else
+		try {
+			WebElement e = driver.findElement(By.id(id));
+			if("a".equalsIgnoreCase(e.getTagName()))
+				return e; //TODO
+			else
+				return null;
+		} catch (NoSuchElementException e) {
 			return null;
+		}
 	}
 
 	/* (non-Javadoc)
@@ -157,15 +185,19 @@ public class SeleniumService implements ISeleniumService {
 	 */
 	@Override
 	public WebElement getCheckbox(String id) {
-		WebElement e = driver.findElement(By.id(id));
-		System.out.println(e.getTagName() + " " + e.getAttribute("name") + " " + e.getAttribute("id"));
-		if(e == null)
-			e = driver.findElement(By.name(id));
-		
-		if("input".equalsIgnoreCase(e.getTagName()))
-			return e; //TODO
-		else
+		try {
+			WebElement e = driver.findElement(By.id(id));
+			System.out.println(e.getTagName() + " " + e.getAttribute("name") + " " + e.getAttribute("id"));
+			if(e == null)
+				e = driver.findElement(By.name(id));
+
+			if("input".equalsIgnoreCase(e.getTagName()))
+				return e; //TODO
+			else
+				return null;
+		} catch (NoSuchElementException e) {
 			return null;
+		}
 	}
 
 	/* (non-Javadoc)
@@ -173,20 +205,44 @@ public class SeleniumService implements ISeleniumService {
 	 */
 	@Override
 	public String getText(String id) {
-		WebElement e = driver.findElement(By.id(id));
-		return e.getText();
+		try {
+			WebElement e = driver.findElement(By.id(id));
+			return e.getText();
+		} catch (NoSuchElementException e) {
+			return null;
+		}
 	}
 
 	/* (non-Javadoc)
 	 * @see org.xtext.emn.selenium.interpreter.ISeleniumService#getInput(java.lang.String)
 	 */
 	@Override
-	public WebElement getInput(String id) {
-		WebElement e = driver.findElement(By.id(id));
-		if(e.getTagName().equals("input"))
-			return e;
-		else
-			return null;
+	public WebElement getInput(String identifier) {
+		WebElement e = complexFind(identifier);
+		if(e != null)
+			if(e.getTagName().equals("input"))
+				return e;
+		return null;
+	}
+
+	private WebElement complexFind(String identifier) {
+		WebElement elem = null;
+		try {
+			elem = driver.findElement(By.id(identifier));
+			return elem;
+		} catch (NoSuchElementException e) {
+			try {
+				elem = driver.findElement(By.name(identifier));
+				return elem;
+			}catch (NoSuchElementException ex) {
+				try {
+					elem = driver.findElement(By.cssSelector(identifier));
+					return elem;
+				}catch (NoSuchElementException exe) {
+					return null;
+				} 
+			} 
+		} 
 	}
 
 	/* (non-Javadoc)
@@ -225,14 +281,10 @@ public class SeleniumService implements ISeleniumService {
 	@Override
 	public void tickCheckbox(WebElement e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 
-	@Override
-	public void gotoLink(String link) {
-		// TODO Auto-generated method stub
-		
-	}
+
 
 }
