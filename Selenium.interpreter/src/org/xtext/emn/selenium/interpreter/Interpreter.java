@@ -25,6 +25,7 @@ import org.xtext.emn.selenium.sel.GetCheckboxes;
 import org.xtext.emn.selenium.sel.GetInput;
 import org.xtext.emn.selenium.sel.GetLink;
 import org.xtext.emn.selenium.sel.GetLinks;
+import org.xtext.emn.selenium.sel.GetText;
 import org.xtext.emn.selenium.sel.GoTo;
 import org.xtext.emn.selenium.sel.IfThenElse;
 import org.xtext.emn.selenium.sel.Instruction;
@@ -72,8 +73,13 @@ public class Interpreter {
 		service.setDriver(t.getBrowser());
 
 		EList<Exec> body = t.getBody();
-		for (Exec e : body) {
-			execute(e);
+		try {
+			for (Exec e : body) {
+				execute(e);
+			}
+		} catch (NullPointerException e) {
+			// If a NPE is thrown, then something is wrong with the test
+			System.err.println("Closing test up");
 		}
 		service.closeDriver();
 	}
@@ -213,6 +219,9 @@ public class Interpreter {
 		} else if (expr instanceof GetInput) {
 			value = ((GetInput) expr).getValue();
 			return this.service.getInput((String) this.evaluateValue(value));
+		} else if (expr instanceof GetText) {
+			value = ((GetText) expr).getValue();
+			return this.service.getText((String) this.evaluateValue(value));
 		} else if (expr instanceof Variable) {
 			Variable var = (Variable) expr;
 

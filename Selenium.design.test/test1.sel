@@ -1,0 +1,28 @@
+Sequence google {
+	GoTo "http://www.google.fr"
+	Sequence innerSequence {
+		Click GetButton "search-button"
+	}
+	Fill GetInput "search" with "dsl"
+	Exec innerSequence
+	Verify Exists GetInput "search" as "Search field exists"
+	Verify Not GetInput "search" Equals "dsll" as "Search field does not contain dsll"
+}
+
+Test "firefox" {
+	Exec google
+	Exec gotoSequence("http://facebook.com", "http://twitter.com")
+}
+
+Sequence gotoSequence(link1, link2) {
+	GoTo GetLink link1
+	Click GetButton "connexion"
+	GoTo GetLink link2
+	rem = GetCheckbox "remember"
+	Check rem
+	Verify rem Equals "remember" as "Remember checkbox is remember"
+}
+
+Test "chrome" {
+	Exec google
+}
