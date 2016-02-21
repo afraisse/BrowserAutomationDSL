@@ -6,7 +6,7 @@
       <actionSet
             label="SEL Action Set"
             visible="true"
-            id="sel.interpreter.actionSet">
+            id="org.xtext.emn.selenium.interpreter.actionSet">
          <menu
                label="SEL"
                id="selMenu">
@@ -19,7 +19,7 @@
                icon="icons/sample.gif"
                class="org.xtext.emn.selenium.interpreter.handlers.InterpreterAction"
                tooltip="Execute the currently selected sel script"
-               menubarPath="sel/selGroup"
+               menubarPath="selmenu/selGroup"
                toolbarPath="selGroup"
                id="org.xtext.emn.selenium.interpreter.handlers.InterpreterAction">
          </action>

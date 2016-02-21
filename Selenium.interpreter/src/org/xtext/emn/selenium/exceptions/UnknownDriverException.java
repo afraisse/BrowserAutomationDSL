@@ -1,5 +1,5 @@
 package org.xtext.emn.selenium.exceptions;
 
-public class UnknownDriverException {
-
+public class UnknownDriverException extends Exception{
+	public UnknownDriverException() {super();}
 }

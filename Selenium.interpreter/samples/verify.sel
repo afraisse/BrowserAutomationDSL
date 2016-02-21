@@ -1,0 +1,31 @@
+Sequence connexion {
+	GoTo GetLink "https://campusneo.mines-nantes.fr/campus/login/index.php"
+	Fill GetInput "username" with "mtisi08"
+	Fill GetInput "password" with "12345"
+	Check GetCheckbox "warn"
+	Click GetButton "Connexion"
+	GoTo GetLink "https://campusneo.mines-nantes.fr/campus/course/view.php?id=1571"	
+	
+	Verify GetLink "Consulter le profil" Contains "Massimo Tisi" as "Profile is set"
+	Verify GetButton "Deconnexion" Equals "Deco" as "Disconnect button label"
+	Verify IsChecked GetCheckbox "checkbox" as "Checkbox is checked"
+	Verify IsEnabled GetButton "Deconnexion" as "Disconnect button is enabled"
+	Verify Not Exists GetButton "Connexion" as "No connect button"
+	
+	If Exists GetButton "connexion" {
+		Verify IsEnabled GetButton "connexion" as "If Connexion button"	
+	}Else {
+		Verify IsEnabled GetButton "Déconnexion" as "Else Déconnexion button"
+	}
+		
+	ForAll GetCheckboxes "checkbox" box {
+		Verify IsChecked box as "For all Box checked"
+		inner = GetLink "test"
+	}
+	
+	Verify Exists inner as "inner exists"
+}
+
+Test "Safari" {
+	Exec connexion
+}

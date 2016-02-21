@@ -1,6 +1,6 @@
 package org.xtext.emn.selenium.impl;
 
-import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -124,6 +124,12 @@ public class SeleniumServiceStub implements ISeleniumService {
 		// TODO Auto-generated method stub
 
 	}
+	
+	@Override
+	public void setDriver(String browserName, String binaryPath) {
+		// TODO Auto-generated method stub
+
+	}
 
 	@Override
 	public void gotoLink(WebElement link) {
@@ -191,9 +197,9 @@ public class SeleniumServiceStub implements ISeleniumService {
 	}
 
 	@Override
-	public String getText(String id) {
+	public WebElement getText(String id) {
 		System.out.println("getText : "+id);
-		return "stub";
+		return this.stub;
 	}
 
 	@Override
@@ -204,26 +210,34 @@ public class SeleniumServiceStub implements ISeleniumService {
 
 	@Override
 	public List<WebElement> getButtons(String id) {
-		// TODO Auto-generated method stub
-		return null;
+		List<WebElement> list = new ArrayList<WebElement>();
+		list.add(this.stub);
+		list.add(this.stub);
+		return list;
 	}
 
 	@Override
 	public List<WebElement> getLinks(String id) {
-		// TODO Auto-generated method stub
-		return null;
+		List<WebElement> list = new ArrayList<WebElement>();
+		list.add(this.stub);
+		list.add(this.stub);
+		return list;
 	}
 
 	@Override
 	public List<WebElement> getCheckboxes(String id) {
-		// TODO Auto-generated method stub
-		return null;
+		List<WebElement> list = new ArrayList<WebElement>();
+		list.add(this.stub);
+		list.add(this.stub);
+		return list;
 	}
 
 	@Override
 	public List<WebElement> getInputs(String id) {
-		// TODO Auto-generated method stub
-		return null;
+		List<WebElement> list = new ArrayList<WebElement>();
+		list.add(this.stub);
+		list.add(this.stub);
+		return list;
 	}
 
 	@Override
@@ -242,6 +256,11 @@ public class SeleniumServiceStub implements ISeleniumService {
 	public void gotoLink(String link) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	@Override
+	public List<WebElement> getTexts(String id) {
+		return null; //TODO
 	}
 
 }
