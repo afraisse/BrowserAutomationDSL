@@ -1,9 +1,18 @@
 package org.xtext.emn.selenium.impl;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
+import java.util.stream.Collectors;
 
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IWorkspace;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -15,11 +24,14 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.safari.SafariDriver;
 import org.xtext.emn.selenium.ISeleniumService;
+import org.xtext.emn.selenium.interpreter.handlers.InterpreterAction;
 
 public class SeleniumService implements ISeleniumService {
 
 	//Singleton pattern
-	private SeleniumService(){}
+	private SeleniumService(){
+
+	}
 	private static class SeleniumServiceHandler {
 		private final static ISeleniumService instance = new SeleniumService();
 	}
@@ -42,44 +54,62 @@ public class SeleniumService implements ISeleniumService {
 	/* TESTED */
 	@Override
 	public void setDriver(String browserName) {
-		//findProps();
-		setDriver(browserName, null);
+		retrieveProperties();
 		log("driver set to " + browserName);
-	}
-
-	/* TESTED */
-	@Override
-	public void setDriver(String browserName, String binaryPath) {
 		if("firefox".equalsIgnoreCase(browserName)) {
-			if(binaryPath != null) {
-				driver = new FirefoxDriver(new FirefoxBinary(new File(binaryPath)), new FirefoxProfile());
-			} else 
+			try {
 				driver = new FirefoxDriver();
+			}catch(Exception e) {
+				String binaryPath = System.getProperty("emn.selenium.config.firefox");
+				System.out.println("binpath: " +binaryPath);
+				System.setProperty("webdriver.firefox.driver", binaryPath);
+				driver = new FirefoxDriver(new FirefoxBinary(new File(binaryPath)), new FirefoxProfile());
+			}
 		} else if("chrome".equalsIgnoreCase(browserName)) {
-			if(binaryPath != null) 
-				System.setProperty("webdriver.chrome.driver", binaryPath);
-			else 
+			try {
 				driver = new ChromeDriver();
+			}catch(Exception e) {
+				String binaryPath = System.getProperty("emn.selenium.config.chrome");
+				System.out.println("binpath: " +binaryPath);
+				System.setProperty("webdriver.chrome.driver", binaryPath);
+				driver = new ChromeDriver();
+			}
 		} else if("safari".equalsIgnoreCase(browserName)) {
-			if(binaryPath != null) 
-				System.setProperty("webdriver.safari.driver", binaryPath);
-			else 
+			try {
 				driver = new SafariDriver();
+			}catch(Exception e) {
+				String binaryPath = System.getProperty("emn.selenium.config.safari");
+				System.out.println("binpath: " +binaryPath);
+				System.setProperty("webdriver.safari.driver", binaryPath);
+				driver = new SafariDriver();
+			}
 		}else if("ie".equalsIgnoreCase(browserName)) {
-			if(binaryPath != null) 
+			try {
+				driver = new EdgeDriver();
+			}catch(Exception e) {
+				String binaryPath = System.getProperty("emn.selenium.config.ie");
+				System.out.println(	"binpath: " +binaryPath);
 				System.setProperty("webdriver.edge.driver", binaryPath);
-			driver = new EdgeDriver();
+				driver = new EdgeDriver();
+				System.out.println(driver);
+			}
 		} else 
 			throw new RuntimeException("unknown browser : " + browserName);
 	}
 
-	private void findProps() {
-		System.out.println("coucou");
-		System.out.println(System.getProperty("java.class.path"));
-		Properties p = System.getProperties();
-		System.out.println(p.size());
-		for(Object k : p.keySet().toArray()) {
-			System.out.println(k);
+	/* TESTED */
+	private void retrieveProperties() {
+		Properties p = new Properties();
+		System.out.println("Parsing property file from: " + System.getProperty("emn.selenium.config"));
+		try {
+			p.load(new FileInputStream(System.getProperty("emn.selenium.config")));
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		for(Object key : p.keySet()) {
+			System.setProperty((String)key, (String)p.get(key));
 		}
 	}
 
@@ -113,18 +143,6 @@ public class SeleniumService implements ISeleniumService {
 	@Override
 	public void fillInput(WebElement e, String str) {
 		e.sendKeys(str);
-		/*String script="var array = document.getElementsByTagName('"+e.getTagName()+"'); "+
-				"for(var i=0; i< array.length; ++i) { "+
-				"if(array[i].getAttribute('innerHTML') == '"+e.getText()+"')"+
-				"{array[i].value='"+ str +"'}  }";
-
-		if(driver instanceof FirefoxDriver) {
-			((FirefoxDriver)driver).executeScript(script); 
-		} else if(driver instanceof ChromeDriver) {
-			((ChromeDriver)driver).executeScript(script); 
-		} else if(driver instanceof InternetExplorerDriver) {
-			((InternetExplorerDriver)driver).executeScript(script); 
-		}*/
 	}
 
 
@@ -231,13 +249,12 @@ public class SeleniumService implements ISeleniumService {
 		return null;
 	}
 
-	//TODO
+	
 	@Override
 	public WebElement getText(String identifier) {
 		log("trying to find text: '" + identifier + "'");
 		WebElement e = complexFind(identifier);
 		if(e != null) {
-			log(e.getText());
 			return e;
 		}
 		fail("ERROR: element '"+identifier+"' not found on this page.");
@@ -328,37 +345,96 @@ public class SeleniumService implements ISeleniumService {
 
 	@Override
 	public List<WebElement> getButtons(String identifier) {
-		List<WebElement> elems = null;
-		elems = driver.findElements(By.name(identifier));
-		if(elems.size()==0)
-			driver.findElements(By.name(identifier));
+		List<WebElement> elems;
+		List<WebElement> list = new ArrayList<WebElement>();
+		try {
+			elems = driver.findElements(By.name(identifier));
+			elems.addAll(driver.findElements(By.cssSelector(identifier)));
+			elems.addAll(driver.findElements(By.partialLinkText(identifier)));
+			elems.addAll(driver.findElements(By.xpath(identifier)));
+			list = elems.stream()
+					.filter(e -> (e.getTagName() == "button" || e.getTagName() == "input"))
+					.collect(Collectors.toList());
+		}catch(Exception e) {
+			fail("ERROR: no buttons matching '"+identifier+"' found on this page.");
+		}
 
-
-
-		return null;
+		return list;
 	}
 
 
 	@Override
-	public List<WebElement> getLinks(String id) {
-		return null; //TODO
+	public List<WebElement> getLinks(String identifier) {
+		List<WebElement> elems;
+		List<WebElement> list = new ArrayList<WebElement>();
+		try {
+			elems = driver.findElements(By.name(identifier));
+			elems.addAll(driver.findElements(By.cssSelector(identifier)));
+			elems.addAll(driver.findElements(By.partialLinkText(identifier)));
+			elems.addAll(driver.findElements(By.xpath(identifier)));
+			list = elems.stream()
+					.filter(e -> (e.getTagName() == "a" || e.getTagName() == "area"))
+					.collect(Collectors.toList());
+		}catch(Exception e) {
+			fail("ERROR: no links matching '"+identifier+"' found on this page.");
+		}
+
+		return list;
 	}
 
 
 	@Override
-	public List<WebElement> getCheckboxes(String id) {
-		return null; //TODO
+	public List<WebElement> getCheckboxes(String identifier) {
+		List<WebElement> elems;
+		List<WebElement> list = new ArrayList<WebElement>();
+		try {
+			elems = driver.findElements(By.name(identifier));
+			elems.addAll(driver.findElements(By.cssSelector(identifier)));
+			elems.addAll(driver.findElements(By.partialLinkText(identifier)));
+			elems.addAll(driver.findElements(By.xpath(identifier)));
+			list = elems.stream()
+					.filter(e -> (e.getTagName() == "input"))
+					.collect(Collectors.toList());
+		}catch(Exception e) {
+			fail("ERROR: no checkboxes matching '"+identifier+"' found on this page.");
+		}
+
+		return list;
 	}
 
 
 	@Override
-	public List<WebElement> getInputs(String id) {
-		return null; //TODO
+	public List<WebElement> getInputs(String identifier) {
+		List<WebElement> elems;
+		List<WebElement> list = new ArrayList<WebElement>();
+		try {
+			elems = driver.findElements(By.name(identifier));
+			elems.addAll(driver.findElements(By.cssSelector(identifier)));
+			elems.addAll(driver.findElements(By.partialLinkText(identifier)));
+			elems.addAll(driver.findElements(By.xpath(identifier)));
+			list = elems.stream()
+					.filter(e -> (e.getTagName() == "input"))
+					.collect(Collectors.toList());
+		}catch(Exception e) {
+			fail("ERROR: no inputs matching '"+identifier+"' found on this page.");
+		}
+
+		return list;
 	}
 
 	@Override
-	public List<WebElement> getTexts(String id) {
-		return null; //TODO
+	public List<WebElement> getTexts(String identifier) {
+		List<WebElement> elems = new ArrayList<WebElement>();
+		try {
+			elems = driver.findElements(By.name(identifier));
+			elems.addAll(driver.findElements(By.cssSelector(identifier)));
+			elems.addAll(driver.findElements(By.partialLinkText(identifier)));
+			elems.addAll(driver.findElements(By.xpath(identifier)));
+			
+		}catch(Exception e) {
+			fail("ERROR: no texts matching '"+identifier+"' found on this page.");
+		}
+		return elems;
 	}
 
 

@@ -22,6 +22,7 @@ import org.xtext.emn.selenium.sel.Program;
 public class InterpreterAction implements IWorkbenchWindowActionDelegate {
 	private IWorkbenchWindow window;
 
+	
 	/**
 	 * The constructor.
 	 */
@@ -37,6 +38,7 @@ public class InterpreterAction implements IWorkbenchWindowActionDelegate {
 	 */
 	public void run(IAction action) {
 		XtextEditor editor = (XtextEditor) window.getActivePage().getActiveEditor();
+		System.setProperty("emn.selenium.config", editor.getResource().getParent().getLocation().toString() + "/config.properties");
 		editor.getDocument().readOnly(new IUnitOfWork<String, XtextResource>() {
 
 			@Override
