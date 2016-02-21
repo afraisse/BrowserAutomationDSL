@@ -32,10 +32,10 @@ public class SeleniumService implements ISeleniumService {
 
 
 	private void log(String msg) {
-		//System.out.println("--" + driver.getClass().toString() + " --> " + msg);
+		System.out.println("--" + driver.getClass().toString() + " --> " + msg);
 	}
 	private void fail(String msg) {
-		//System.err.println("--" + driver.getClass().toString() + " --> " + msg);
+		System.err.println("--" + driver.getClass().toString() + " --> " + msg);
 	}
 
 
