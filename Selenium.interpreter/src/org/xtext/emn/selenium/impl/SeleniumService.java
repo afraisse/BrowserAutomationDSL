@@ -2,6 +2,7 @@ package org.xtext.emn.selenium.impl;
 
 import java.io.File;
 import java.util.List;
+import java.util.Properties;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -41,6 +42,7 @@ public class SeleniumService implements ISeleniumService {
 	/* TESTED */
 	@Override
 	public void setDriver(String browserName) {
+		//findProps();
 		setDriver(browserName, null);
 		log("driver set to " + browserName);
 	}
@@ -69,6 +71,16 @@ public class SeleniumService implements ISeleniumService {
 			driver = new EdgeDriver();
 		} else 
 			throw new RuntimeException("unknown browser : " + browserName);
+	}
+
+	private void findProps() {
+		System.out.println("coucou");
+		System.out.println(System.getProperty("java.class.path"));
+		Properties p = System.getProperties();
+		System.out.println(p.size());
+		for(Object k : p.keySet().toArray()) {
+			System.out.println(k);
+		}
 	}
 
 	/* TESTED */
@@ -190,16 +202,21 @@ public class SeleniumService implements ISeleniumService {
 		log("trying to find link: '" + identifier + "'");
 		WebElement e = complexFind(identifier);
 
-		if(e == null) 
-			e = complexFind("area", "href", identifier);
-		if(e == null)
-			e = xpathFindA(identifier);
+		try {
+			if(e == null) 
+				e = complexFind("area", "href", identifier);
+			if(e == null)
+				e = xpathFindA(identifier);
 
-		if(e != null)
-			return e;
+			if(e != null)
+				return e;
 
-		fail("ERROR: element '"+identifier+"' not found on this page.");
-		return null;
+			fail("ERROR: element '"+identifier+"' not found on this page.");
+			return null;
+		}catch(NoSuchElementException ex) {
+			fail(ex.getMessage());
+			return null;
+		}
 	}
 
 	/* TESTED */
@@ -221,12 +238,13 @@ public class SeleniumService implements ISeleniumService {
 		WebElement e = complexFind(identifier);
 		if(e != null) {
 			log(e.getText());
-			return e; //TODO change along with interpreter.
+			return e;
 		}
 		fail("ERROR: element '"+identifier+"' not found on this page.");
 		return null;
 	}
-	
+
+
 	/* TESTED */
 	@Override
 	public WebElement getInput(String identifier) {
@@ -309,8 +327,15 @@ public class SeleniumService implements ISeleniumService {
 	}
 
 	@Override
-	public List<WebElement> getButtons(String id) {
-		return null; //TODO
+	public List<WebElement> getButtons(String identifier) {
+		List<WebElement> elems = null;
+		elems = driver.findElements(By.name(identifier));
+		if(elems.size()==0)
+			driver.findElements(By.name(identifier));
+
+
+
+		return null;
 	}
 
 
@@ -330,7 +355,7 @@ public class SeleniumService implements ISeleniumService {
 	public List<WebElement> getInputs(String id) {
 		return null; //TODO
 	}
-	
+
 	@Override
 	public List<WebElement> getTexts(String id) {
 		return null; //TODO
