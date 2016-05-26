@@ -1,5 +1,9 @@
 # BrowserAutomationDSL
 
+This repository is an academic project at l'Ecole des Mines de Nantes. It is part of the Modeling class.
+Our aim was to built a DSL for Browser automation, using eclipse modeling tooling EMF and Xtext.
+Our DSL is interpreted by our program, which then delegate browser automation to a Selenium driver.
+
 ## Case Study - Adrian Fraisse, Théophile Morin, Killian Saint Cricq
 
 We implemented our Selenium DSL using an interpreter which is to be found in the Selenium.interpreter project.
